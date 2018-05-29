@@ -66,12 +66,12 @@ namespace MyTaxi
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("insert_vehicle", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@vehicle_id", SqlDbType.VarChar).Value = Vehicle_text.Text.Trim();
-                cmd.Parameters.AddWithValue("@date", SqlDbType.Date).Value = date_pick.Text.Trim();
-                cmd.Parameters.AddWithValue("@cost", SqlDbType.Int).Value = Cost_text.Text.Trim();
-                cmd.Parameters.AddWithValue("@showroom_place", SqlDbType.VarChar).Value = Place_text.Text.Trim();
-                cmd.Parameters.AddWithValue("@showrrom_no", SqlDbType.Int).Value = Number_text.Text.Trim();
-                cmd.Parameters.AddWithValue("@showroom_mail", SqlDbType.VarChar).Value = Mail_text.Text.Trim();
+                cmd.Parameters.AddWithValue("@vehicle_id", Vehicle_text.Text.Trim());
+                cmd.Parameters.AddWithValue("@date",Convert.ToDateTime( date_pick.Text.Trim()));
+                cmd.Parameters.AddWithValue("@cost",Convert.ToInt32( Cost_text.Text.Trim()));
+                cmd.Parameters.AddWithValue("@showroom_place",Place_text.Text.Trim());
+                cmd.Parameters.AddWithValue("@showrrom_no", Convert.ToInt32( Number_text.Text.Trim()));
+                cmd.Parameters.AddWithValue("@showroom_mail",  Mail_text.Text.Trim());
                 cmd.ExecuteNonQuery();
 
                
@@ -174,13 +174,13 @@ namespace MyTaxi
                 SqlCommand cmd = new SqlCommand("update_vehicle", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@vehicle_id", SqlDbType.VarChar).Value = vehicle_text_edit.Text.Trim();
-                cmd.Parameters.AddWithValue("@date", SqlDbType.Date).Value = date_edit.Text.Trim();
-                cmd.Parameters.AddWithValue("@cost", SqlDbType.Int).Value = cost_text_edit.Text.Trim();
-                cmd.Parameters.AddWithValue("@showroom_place", SqlDbType.VarChar).Value = showroom_place_text_edit.Text.Trim();
-                cmd.Parameters.AddWithValue("@showrrom_no", SqlDbType.Int).Value = showroom_no_text_edit.Text.Trim();
-                cmd.Parameters.AddWithValue("@showroom_mail", SqlDbType.VarChar).Value = showroom_mail_text_edit.Text.Trim();  
-                cmd.Parameters.AddWithValue("@vehicle_old", SqlDbType.VarChar).Value = vehicle_temp;
+                cmd.Parameters.AddWithValue("@vehicle_id",  vehicle_text_edit.Text.Trim());
+                cmd.Parameters.AddWithValue("@date",Convert.ToDateTime( date_edit.Text.Trim()));
+                cmd.Parameters.AddWithValue("@cost", Convert.ToInt32( cost_text_edit.Text.Trim()));
+                cmd.Parameters.AddWithValue("@showroom_place", showroom_place_text_edit.Text.Trim());
+                cmd.Parameters.AddWithValue("@showrrom_no", Convert.ToInt32( showroom_no_text_edit.Text.Trim()));
+                cmd.Parameters.AddWithValue("@showroom_mail",  showroom_mail_text_edit.Text.Trim());  
+                cmd.Parameters.AddWithValue("@vehicle_old",  vehicle_temp);
 
                 cmd.ExecuteNonQuery();
                 BackToViewMode();

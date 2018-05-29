@@ -15,7 +15,7 @@ namespace MyTaxi
     public partial class Home : UserControl
     {
         
-       
+        string company, cost, km, dat,vehicle,from,to;
         public Home()
         {
             InitializeComponent();
@@ -59,16 +59,29 @@ namespace MyTaxi
         //submiting to search to details from vehicles and date 
         private void Submit1_button_Click(object sender, EventArgs e)
         {
-           SqlConnection conn = new SqlConnection();
+            vehicle=dropdown_vehicle_details.Text.Trim();
+            from=from_date.Text.Trim();
+            to=to_date.Text.Trim();
+            vehicle_fetch_listview_fill();
+        }
+
+
+        void vehicle_fetch_listview_fill()
+        {
+            SqlConnection conn = new SqlConnection();
             conn.ConnectionString = "Data Source=(local)\\SQLEXPRESS;Initial Catalog=MyTaxi;Integrated Security=True";
             try
             {
+                Delete.Visible = false;
+                delete_label.Visible = false;
+
+
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("vehicle_fetch_triptab", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@vehicle", SqlDbType.VarChar).Value = dropdown_vehicle_details.Text.Trim();
-                cmd.Parameters.AddWithValue("@from_date", Convert.ToDateTime(from_date.Text.Trim()));
-                cmd.Parameters.AddWithValue("@to_date", Convert.ToDateTime(to_date.Text.Trim()));
+                cmd.Parameters.AddWithValue("@vehicle",  vehicle);
+                cmd.Parameters.AddWithValue("@from_date", Convert.ToDateTime(from));
+                cmd.Parameters.AddWithValue("@to_date", Convert.ToDateTime(to));
                 SqlDataReader reader = cmd.ExecuteReader();
                 DataTable data = new DataTable();
                 data.Load(reader);
@@ -92,7 +105,7 @@ namespace MyTaxi
                     listitem.SubItems.Add(dr["quality_in_feed"].ToString());
                     vehicle_listview.Items.Add(listitem);
                 }
-               
+
             }
             catch (Exception)
             {
@@ -103,7 +116,6 @@ namespace MyTaxi
                 conn.Close();
             }
         }
-
 
         //while selecting the vehicle number from the drop down list in trip tab
         private void dropdown_vehicle_trip_SelectedIndexChanged(object sender, EventArgs e)
@@ -160,40 +172,16 @@ namespace MyTaxi
            
              try
              {
+                if (Diesel_text.Text == "")
+                    Diesel_text.Text = "0";
+                if (diesel_text_us.Text == "")
+                    diesel_text_us.Text = "0";
+                if (Advance_text_company.Text == "")
+                    Advance_text_company.Text = "0";
+                if (Advance_text_US.Text == "")
+                    Advance_text_US.Text = "0";
+
                 conn.Open();
-                int advance_payment=0, temp=0;
-                if (Advance_text_company.Text != null || Advance_text_US.Text != null)
-                {
-                    if (Advance_text_company.Text != null && Advance_text_US.Text != null)
-                    {
-                        advance_payment = Convert.ToInt32((Advance_text_company.Text.Trim())) + Convert.ToInt32((Advance_text_US.Text.Trim()));
-                    }
-                    else if (Advance_text_US.Text != null)
-                    {
-                        advance_payment = Convert.ToInt32((Advance_text_US.Text.Trim()));
-                    }
-                    else
-                    {
-                        advance_payment = Convert.ToInt32((Advance_text_company.Text.Trim()));
-                    }
-
-                    temp = advance_payment;
-                    advance_payment = advance_payment - Convert.ToInt32((Remarks_text.Text.Trim()));
-
-                    SqlCommand cmd_new = new SqlCommand("advance_update", conn);
-                    cmd_new.CommandType = CommandType.StoredProcedure;
-                    cmd_new.Parameters.AddWithValue("@driver", driver_droplist.Text);
-                    cmd_new.Parameters.AddWithValue("@amount", advance_payment);
-                    cmd_new.ExecuteNonQuery();
-
-                    int company_reduce = Convert.ToInt32((Advance_text_company.Text.Trim())) + Convert.ToInt32((Diesel_text.Text.Trim()));
-                    SqlCommand cmd_new_company = new SqlCommand("company_driver_advance_reduce", conn);
-                    cmd_new_company.CommandType = CommandType.StoredProcedure;
-                    cmd_new_company.Parameters.AddWithValue("@company", company_text.Text);
-                    cmd_new_company.Parameters.AddWithValue("@amount", company_reduce);
-                    cmd_new_company.ExecuteNonQuery();
-                }
-
                 SqlCommand cmd = new SqlCommand("insert_trip_details", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@vehicle_number",  dropdown_vehicle_trip.Text.Trim());
@@ -209,7 +197,8 @@ namespace MyTaxi
                 cmd.Parameters.AddWithValue("@remarks", Convert.ToInt32( Remarks_text.Text.Trim()));
                 cmd.Parameters.AddWithValue("@date", Convert.ToDateTime(date_pick.Text.Trim()));
                 cmd.Parameters.AddWithValue("@quality_in_feed",  Quality_in_feeds_text.Text.Trim());
-                cmd.Parameters.AddWithValue("@advance", temp);
+                cmd.Parameters.AddWithValue("@advance", Convert.ToInt32(Advance_text_company.Text.Trim()));
+                cmd.Parameters.AddWithValue("@advance_us", Convert.ToInt32(Advance_text_US.Text.Trim()));
                 cmd.ExecuteNonQuery();
                
 
@@ -317,6 +306,9 @@ namespace MyTaxi
                 conn_new.Close();
             }
         }
+
+        
+
         public void Load_company()
         {
             SqlConnection conn = new SqlConnection();
@@ -349,8 +341,8 @@ namespace MyTaxi
         {
             SqlConnection conn_new = new SqlConnection();
             conn_new.ConnectionString = "Data Source=(local)\\SQLEXPRESS;Initial Catalog=MyTaxi;Integrated Security=True";
-           // try
-            //{
+            try
+            {
                 conn_new.Open();
                 SqlCommand cmd_new = new SqlCommand("total_overview", conn_new);
                 cmd_new.CommandType = CommandType.StoredProcedure;
@@ -374,7 +366,7 @@ namespace MyTaxi
                         Profit_money.Text = Convert.ToString(total_profit);
                
                 }
-           /* }
+            }
             catch (Exception)
             {
                 MessageBox.Show("Error occured");
@@ -382,7 +374,59 @@ namespace MyTaxi
             finally
             {
                 conn_new.Close();
-            }*/
+            }
+        }
+
+        private void vehicle_listview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (vehicle_listview.SelectedItems.Count > 0)
+            {
+                Delete.Visible = true;
+                delete_label.Visible = true;
+
+                company = vehicle_listview.SelectedItems[0].SubItems[0].Text;
+                cost = vehicle_listview.SelectedItems[0].SubItems[1].Text;
+                km =vehicle_listview.SelectedItems[0].SubItems[2].Text;
+                dat = vehicle_listview.SelectedItems[0].SubItems[9].Text;
+            }
+            else
+            {
+                Delete.Visible = false;
+                delete_label.Visible = false;
+            }
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn_new = new SqlConnection();
+            conn_new.ConnectionString = "Data Source=(local)\\SQLEXPRESS;Initial Catalog=MyTaxi;Integrated Security=True";
+            try
+            {
+                System.Windows.MessageBoxResult m = System.Windows.MessageBox.Show("Do you really want to delete the trip detail", "After deletion of the list it is not possible to get it back", System.Windows.MessageBoxButton.OKCancel);
+                if (m == System.Windows.MessageBoxResult.OK)
+                {
+                    conn_new.Open();
+                    SqlCommand cmd_new = new SqlCommand("trip_delete_details", conn_new);
+                    cmd_new.CommandType = CommandType.StoredProcedure;
+                    cmd_new.Parameters.AddWithValue("@company", company);
+                    cmd_new.Parameters.AddWithValue("@cost", Convert.ToInt32(cost));
+                    cmd_new.Parameters.AddWithValue("@km", Convert.ToInt32(km));
+                    cmd_new.Parameters.AddWithValue("@date", Convert.ToDateTime(dat));
+                    cmd_new.ExecuteNonQuery();
+                    vehicle_fetch_listview_fill();
+                    MessageBox.Show("Trip details deleted");
+                    
+                }
+                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error occured");
+            }
+            finally
+            {
+                conn_new.Close();
+            }
         }
     }
 }

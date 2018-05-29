@@ -43,11 +43,13 @@
             this.Vehicle_button = new System.Windows.Forms.Button();
             this.Driver = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.company1 = new MyTaxi.Company();
             this.home_new = new MyTaxi.Home();
             this.vehicle_new = new MyTaxi.vehicle();
             this.maintenance1 = new MyTaxi.Maintenance();
             this.driver1 = new MyTaxi.Driver();
-            this.company1 = new MyTaxi.Company();
+            this.backup_button = new System.Windows.Forms.Button();
+            this.database1 = new MyTaxi.database();
             this.Top_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.Left_panel.SuspendLayout();
@@ -58,6 +60,7 @@
             // Top_panel
             // 
             this.Top_panel.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Top_panel.Controls.Add(this.backup_button);
             this.Top_panel.Controls.Add(this.MyTaxi);
             this.Top_panel.Controls.Add(this.Exit);
             this.Top_panel.Controls.Add(this.Logo);
@@ -220,6 +223,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.database1);
             this.panel5.Controls.Add(this.company1);
             this.panel5.Controls.Add(this.home_new);
             this.panel5.Controls.Add(this.vehicle_new);
@@ -230,6 +234,15 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(866, 410);
             this.panel5.TabIndex = 4;
+            // 
+            // company1
+            // 
+            this.company1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.company1.Location = new System.Drawing.Point(0, 0);
+            this.company1.Name = "company1";
+            this.company1.Size = new System.Drawing.Size(866, 410);
+            this.company1.TabIndex = 6;
+            this.company1.Visible = false;
             // 
             // home_new
             // 
@@ -270,14 +283,26 @@
             this.driver1.TabIndex = 2;
             this.driver1.Visible = false;
             // 
-            // company1
+            // backup_button
             // 
-            this.company1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.company1.Location = new System.Drawing.Point(0, 0);
-            this.company1.Name = "company1";
-            this.company1.Size = new System.Drawing.Size(866, 410);
-            this.company1.TabIndex = 6;
-            this.company1.Visible = false;
+            this.backup_button.BackColor = System.Drawing.Color.Tan;
+            this.backup_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backup_button.Location = new System.Drawing.Point(844, 4);
+            this.backup_button.Name = "backup_button";
+            this.backup_button.Size = new System.Drawing.Size(64, 23);
+            this.backup_button.TabIndex = 2;
+            this.backup_button.Text = "Backup";
+            this.backup_button.UseVisualStyleBackColor = false;
+            this.backup_button.Click += new System.EventHandler(this.backup_button_Click);
+            // 
+            // database1
+            // 
+            this.database1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.database1.Location = new System.Drawing.Point(0, 0);
+            this.database1.Name = "database1";
+            this.database1.Size = new System.Drawing.Size(866, 410);
+            this.database1.TabIndex = 7;
+            this.database1.Visible = false;
             // 
             // Form1
             // 
@@ -322,6 +347,8 @@
         private vehicle vehicle_new;
         private Home home_new;
         private Company company1;
+        private System.Windows.Forms.Button backup_button;
+        private database database1;
     }
 }
 

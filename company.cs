@@ -95,7 +95,31 @@ namespace MyTaxi
 
         private void Update_button_Click(object sender, EventArgs e)
         {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = "Data Source=(local)\\SQLEXPRESS;Initial Catalog=MyTaxi;Integrated Security=True";
+            try
+            {
 
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("update_company", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@company", Company_show_label.Text.Trim());
+                cmd.Parameters.AddWithValue("@contact",Convert.ToInt32( contact_text.Text.Trim()));
+                cmd.Parameters.AddWithValue("@email", email_text.Text.Trim());
+                cmd.ExecuteNonQuery();
+   
+                MessageBox.Show("Details updated");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error occured");
+            }
+            finally
+            {
+                Off_edit_mode();
+                conn.Close();
+            }
         }
 
         private void Cancel_button_Click(object sender, EventArgs e)
@@ -106,6 +130,8 @@ namespace MyTaxi
 
         private void Edit_button_Click(object sender, EventArgs e)
         {
+            email_text.ReadOnly = false;
+            contact_text.ReadOnly = false;
             Edit_button.Visible = false;
             cancel_button.Visible = true;
             Update_button.Visible = true;
@@ -201,7 +227,7 @@ namespace MyTaxi
                 SqlCommand cmd = new SqlCommand("add_company", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@company", Company_text_add.Text.Trim());
-                cmd.Parameters.AddWithValue("@contact", contact_text_add.Text.Trim());
+                cmd.Parameters.AddWithValue("@contact",Convert.ToInt32( contact_text_add.Text.Trim()));
                 cmd.Parameters.AddWithValue("@email", email_text_add.Text.Trim());
                 cmd.ExecuteNonQuery();
                 Load_company();

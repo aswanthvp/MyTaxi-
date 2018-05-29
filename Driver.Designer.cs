@@ -69,6 +69,8 @@
             this.Submit_driver = new System.Windows.Forms.Button();
             this.Driver_add = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.Driver_drop = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.driver_pay_listview = new System.Windows.Forms.ListView();
             this.Driver_payment_submit = new System.Windows.Forms.Button();
             this.trip_payment = new System.Windows.Forms.CheckBox();
@@ -84,8 +86,6 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.Driver_text_add = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.Driver_drop = new System.Windows.Forms.ComboBox();
             this.Driver_tab.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -183,7 +183,7 @@
             this.from_date.Location = new System.Drawing.Point(91, 3);
             this.from_date.Name = "from_date";
             this.from_date.Size = new System.Drawing.Size(82, 20);
-            this.from_date.TabIndex = 6;
+            this.from_date.TabIndex = 8;
             // 
             // from_label
             // 
@@ -212,7 +212,7 @@
             this.to_date.Location = new System.Drawing.Point(91, 31);
             this.to_date.Name = "to_date";
             this.to_date.Size = new System.Drawing.Size(82, 20);
-            this.to_date.TabIndex = 7;
+            this.to_date.TabIndex = 9;
             // 
             // label11
             // 
@@ -266,7 +266,7 @@
             this.date_for_payment.Location = new System.Drawing.Point(3, 116);
             this.date_for_payment.Name = "date_for_payment";
             this.date_for_payment.Size = new System.Drawing.Size(63, 20);
-            this.date_for_payment.TabIndex = 32;
+            this.date_for_payment.TabIndex = 5;
             // 
             // dropdown_payment_type
             // 
@@ -281,7 +281,7 @@
             this.dropdown_payment_type.MaxDropDownItems = 100;
             this.dropdown_payment_type.Name = "dropdown_payment_type";
             this.dropdown_payment_type.Size = new System.Drawing.Size(64, 21);
-            this.dropdown_payment_type.TabIndex = 29;
+            this.dropdown_payment_type.TabIndex = 3;
             // 
             // label1
             // 
@@ -330,14 +330,14 @@
             this.amount.Location = new System.Drawing.Point(72, 80);
             this.amount.Name = "amount";
             this.amount.Size = new System.Drawing.Size(64, 20);
-            this.amount.TabIndex = 30;
+            this.amount.TabIndex = 4;
             // 
             // payment_submit
             // 
             this.payment_submit.Location = new System.Drawing.Point(72, 111);
             this.payment_submit.Name = "payment_submit";
             this.payment_submit.Size = new System.Drawing.Size(64, 23);
-            this.payment_submit.TabIndex = 31;
+            this.payment_submit.TabIndex = 6;
             this.payment_submit.Text = "Submit";
             this.payment_submit.UseVisualStyleBackColor = true;
             this.payment_submit.Click += new System.EventHandler(this.Payment_submit_Click);
@@ -462,7 +462,7 @@
             this.reduce_button.Location = new System.Drawing.Point(73, 53);
             this.reduce_button.Name = "reduce_button";
             this.reduce_button.Size = new System.Drawing.Size(64, 23);
-            this.reduce_button.TabIndex = 13;
+            this.reduce_button.TabIndex = 7;
             this.reduce_button.Text = "Reduce";
             this.reduce_button.UseVisualStyleBackColor = true;
             this.reduce_button.Click += new System.EventHandler(this.reduce_button_Click);
@@ -513,7 +513,7 @@
             this.driver_droplist.MaxDropDownItems = 100;
             this.driver_droplist.Name = "driver_droplist";
             this.driver_droplist.Size = new System.Drawing.Size(74, 21);
-            this.driver_droplist.TabIndex = 29;
+            this.driver_droplist.TabIndex = 1;
             // 
             // Driver_label
             // 
@@ -568,6 +568,27 @@
             this.panel5.Size = new System.Drawing.Size(525, 243);
             this.panel5.TabIndex = 2;
             // 
+            // Driver_drop
+            // 
+            this.Driver_drop.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Driver_drop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Driver_drop.FormattingEnabled = true;
+            this.Driver_drop.Location = new System.Drawing.Point(47, 54);
+            this.Driver_drop.MaxDropDownItems = 100;
+            this.Driver_drop.Name = "Driver_drop";
+            this.Driver_drop.Size = new System.Drawing.Size(79, 21);
+            this.Driver_drop.TabIndex = 3;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(12, 57);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(35, 13);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "Driver";
+            // 
             // driver_pay_listview
             // 
             this.driver_pay_listview.Location = new System.Drawing.Point(139, 57);
@@ -581,7 +602,7 @@
             this.Driver_payment_submit.Location = new System.Drawing.Point(48, 175);
             this.Driver_payment_submit.Name = "Driver_payment_submit";
             this.Driver_payment_submit.Size = new System.Drawing.Size(75, 22);
-            this.Driver_payment_submit.TabIndex = 8;
+            this.Driver_payment_submit.TabIndex = 7;
             this.Driver_payment_submit.Text = "Submit";
             this.Driver_payment_submit.UseVisualStyleBackColor = true;
             this.Driver_payment_submit.Click += new System.EventHandler(this.Driver_payment_submit_Click);
@@ -592,7 +613,7 @@
             this.trip_payment.Location = new System.Drawing.Point(46, 142);
             this.trip_payment.Name = "trip_payment";
             this.trip_payment.Size = new System.Drawing.Size(87, 17);
-            this.trip_payment.TabIndex = 7;
+            this.trip_payment.TabIndex = 6;
             this.trip_payment.Text = "Trip payment";
             this.trip_payment.UseVisualStyleBackColor = true;
             // 
@@ -602,7 +623,7 @@
             this.to_date_pay.Location = new System.Drawing.Point(48, 112);
             this.to_date_pay.Name = "to_date_pay";
             this.to_date_pay.Size = new System.Drawing.Size(78, 20);
-            this.to_date_pay.TabIndex = 6;
+            this.to_date_pay.TabIndex = 5;
             // 
             // from_date_pay
             // 
@@ -610,7 +631,7 @@
             this.from_date_pay.Location = new System.Drawing.Point(48, 86);
             this.from_date_pay.Name = "from_date_pay";
             this.from_date_pay.Size = new System.Drawing.Size(78, 20);
-            this.from_date_pay.TabIndex = 5;
+            this.from_date_pay.TabIndex = 4;
             // 
             // label14
             // 
@@ -659,7 +680,7 @@
             this.Submit_driver_add.Location = new System.Drawing.Point(76, 153);
             this.Submit_driver_add.Name = "Submit_driver_add";
             this.Submit_driver_add.Size = new System.Drawing.Size(75, 23);
-            this.Submit_driver_add.TabIndex = 3;
+            this.Submit_driver_add.TabIndex = 2;
             this.Submit_driver_add.Text = "Submit";
             this.Submit_driver_add.UseVisualStyleBackColor = true;
             this.Submit_driver_add.Click += new System.EventHandler(this.Submit_driver_add_Click);
@@ -714,28 +735,7 @@
             this.Driver_text_add.Location = new System.Drawing.Point(79, 12);
             this.Driver_text_add.Name = "Driver_text_add";
             this.Driver_text_add.Size = new System.Drawing.Size(64, 20);
-            this.Driver_text_add.TabIndex = 32;
-            // 
-            // label15
-            // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(12, 57);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(35, 13);
-            this.label15.TabIndex = 10;
-            this.label15.Text = "Driver";
-            // 
-            // Driver_drop
-            // 
-            this.Driver_drop.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Driver_drop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Driver_drop.FormattingEnabled = true;
-            this.Driver_drop.Location = new System.Drawing.Point(47, 54);
-            this.Driver_drop.MaxDropDownItems = 100;
-            this.Driver_drop.Name = "Driver_drop";
-            this.Driver_drop.Size = new System.Drawing.Size(79, 21);
-            this.Driver_drop.TabIndex = 30;
+            this.Driver_text_add.TabIndex = 1;
             // 
             // Driver
             // 

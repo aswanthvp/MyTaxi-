@@ -72,6 +72,16 @@
             this.Company_label = new System.Windows.Forms.Label();
             this.Submit_driver = new System.Windows.Forms.Button();
             this.Company_add = new System.Windows.Forms.TabPage();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.Company_drop = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.company_pay_listview = new System.Windows.Forms.ListView();
+            this.Company_payment_submit = new System.Windows.Forms.Button();
+            this.to_date_pay = new System.Windows.Forms.DateTimePicker();
+            this.from_date_pay = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.Submit_company = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -83,16 +93,6 @@
             this.Company_text_add = new System.Windows.Forms.TextBox();
             this.contact_text_add = new System.Windows.Forms.TextBox();
             this.email_text_add = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.Company_drop = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.company_pay_listview = new System.Windows.Forms.ListView();
-            this.Company_payment_submit = new System.Windows.Forms.Button();
-            this.to_date_pay = new System.Windows.Forms.DateTimePicker();
-            this.from_date_pay = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.Company_tablayout.SuspendLayout();
             this.Company_tab.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -106,9 +106,9 @@
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.Company_add.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // Company_tablayout
@@ -275,7 +275,7 @@
             this.Details_trip_button.Location = new System.Drawing.Point(185, 42);
             this.Details_trip_button.Name = "Details_trip_button";
             this.Details_trip_button.Size = new System.Drawing.Size(75, 23);
-            this.Details_trip_button.TabIndex = 10;
+            this.Details_trip_button.TabIndex = 9;
             this.Details_trip_button.Text = "Submit";
             this.Details_trip_button.UseVisualStyleBackColor = true;
             this.Details_trip_button.Click += new System.EventHandler(this.Details_trip_button_Click);
@@ -304,7 +304,7 @@
             this.from_date.Location = new System.Drawing.Point(91, 3);
             this.from_date.Name = "from_date";
             this.from_date.Size = new System.Drawing.Size(82, 20);
-            this.from_date.TabIndex = 6;
+            this.from_date.TabIndex = 7;
             // 
             // from_label
             // 
@@ -333,7 +333,7 @@
             this.to_date.Location = new System.Drawing.Point(91, 31);
             this.to_date.Name = "to_date";
             this.to_date.Size = new System.Drawing.Size(82, 20);
-            this.to_date.TabIndex = 7;
+            this.to_date.TabIndex = 8;
             // 
             // label11
             // 
@@ -387,7 +387,7 @@
             this.date_for_payment.Location = new System.Drawing.Point(3, 141);
             this.date_for_payment.Name = "date_for_payment";
             this.date_for_payment.Size = new System.Drawing.Size(63, 20);
-            this.date_for_payment.TabIndex = 32;
+            this.date_for_payment.TabIndex = 5;
             // 
             // dropdown_payment_type
             // 
@@ -402,7 +402,7 @@
             this.dropdown_payment_type.MaxDropDownItems = 100;
             this.dropdown_payment_type.Name = "dropdown_payment_type";
             this.dropdown_payment_type.Size = new System.Drawing.Size(64, 21);
-            this.dropdown_payment_type.TabIndex = 29;
+            this.dropdown_payment_type.TabIndex = 3;
             // 
             // Company_label_payment
             // 
@@ -451,7 +451,7 @@
             this.amount.Location = new System.Drawing.Point(72, 97);
             this.amount.Name = "amount";
             this.amount.Size = new System.Drawing.Size(64, 20);
-            this.amount.TabIndex = 30;
+            this.amount.TabIndex = 4;
             // 
             // payment_submit
             // 
@@ -459,7 +459,7 @@
             this.payment_submit.Location = new System.Drawing.Point(72, 140);
             this.payment_submit.Name = "payment_submit";
             this.payment_submit.Size = new System.Drawing.Size(64, 23);
-            this.payment_submit.TabIndex = 31;
+            this.payment_submit.TabIndex = 6;
             this.payment_submit.Text = "Submit";
             this.payment_submit.UseVisualStyleBackColor = true;
             this.payment_submit.Click += new System.EventHandler(this.Payment_submit_Click);
@@ -567,7 +567,7 @@
             this.Company_droplist.MaxDropDownItems = 100;
             this.Company_droplist.Name = "Company_droplist";
             this.Company_droplist.Size = new System.Drawing.Size(74, 21);
-            this.Company_droplist.TabIndex = 29;
+            this.Company_droplist.TabIndex = 1;
             // 
             // Company_label
             // 
@@ -604,6 +604,108 @@
             this.Company_add.Text = "Add Company";
             this.Company_add.UseVisualStyleBackColor = true;
             // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.Company_drop);
+            this.panel7.Controls.Add(this.label15);
+            this.panel7.Controls.Add(this.company_pay_listview);
+            this.panel7.Controls.Add(this.Company_payment_submit);
+            this.panel7.Controls.Add(this.to_date_pay);
+            this.panel7.Controls.Add(this.from_date_pay);
+            this.panel7.Controls.Add(this.label14);
+            this.panel7.Controls.Add(this.label13);
+            this.panel7.Controls.Add(this.label10);
+            this.panel7.Location = new System.Drawing.Point(184, 30);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(554, 243);
+            this.panel7.TabIndex = 3;
+            // 
+            // Company_drop
+            // 
+            this.Company_drop.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Company_drop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Company_drop.FormattingEnabled = true;
+            this.Company_drop.Location = new System.Drawing.Point(70, 54);
+            this.Company_drop.MaxDropDownItems = 100;
+            this.Company_drop.Name = "Company_drop";
+            this.Company_drop.Size = new System.Drawing.Size(79, 21);
+            this.Company_drop.TabIndex = 5;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(13, 57);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 13);
+            this.label15.TabIndex = 10;
+            this.label15.Text = "Company";
+            // 
+            // company_pay_listview
+            // 
+            this.company_pay_listview.Location = new System.Drawing.Point(155, 54);
+            this.company_pay_listview.Name = "company_pay_listview";
+            this.company_pay_listview.Size = new System.Drawing.Size(354, 174);
+            this.company_pay_listview.TabIndex = 9;
+            this.company_pay_listview.UseCompatibleStateImageBehavior = false;
+            // 
+            // Company_payment_submit
+            // 
+            this.Company_payment_submit.Location = new System.Drawing.Point(74, 158);
+            this.Company_payment_submit.Name = "Company_payment_submit";
+            this.Company_payment_submit.Size = new System.Drawing.Size(75, 22);
+            this.Company_payment_submit.TabIndex = 8;
+            this.Company_payment_submit.Text = "Submit";
+            this.Company_payment_submit.UseVisualStyleBackColor = true;
+            this.Company_payment_submit.Click += new System.EventHandler(this.Company_payment_submit_Click);
+            // 
+            // to_date_pay
+            // 
+            this.to_date_pay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.to_date_pay.Location = new System.Drawing.Point(70, 107);
+            this.to_date_pay.Name = "to_date_pay";
+            this.to_date_pay.Size = new System.Drawing.Size(78, 20);
+            this.to_date_pay.TabIndex = 7;
+            // 
+            // from_date_pay
+            // 
+            this.from_date_pay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.from_date_pay.Location = new System.Drawing.Point(70, 81);
+            this.from_date_pay.Name = "from_date_pay";
+            this.from_date_pay.Size = new System.Drawing.Size(78, 20);
+            this.from_date_pay.TabIndex = 6;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(34, 87);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(30, 13);
+            this.label14.TabIndex = 4;
+            this.label14.Text = "From";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(44, 114);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(20, 13);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "To";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(12, 11);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(109, 15);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "Payment details";
+            // 
             // panel6
             // 
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -621,7 +723,7 @@
             this.Submit_company.Location = new System.Drawing.Point(82, 260);
             this.Submit_company.Name = "Submit_company";
             this.Submit_company.Size = new System.Drawing.Size(75, 23);
-            this.Submit_company.TabIndex = 3;
+            this.Submit_company.TabIndex = 4;
             this.Submit_company.Text = "Submit";
             this.Submit_company.UseVisualStyleBackColor = true;
             this.Submit_company.Click += new System.EventHandler(this.Submit_company_Click);
@@ -702,7 +804,7 @@
             this.Company_text_add.Location = new System.Drawing.Point(79, 15);
             this.Company_text_add.Name = "Company_text_add";
             this.Company_text_add.Size = new System.Drawing.Size(64, 20);
-            this.Company_text_add.TabIndex = 32;
+            this.Company_text_add.TabIndex = 1;
             // 
             // contact_text_add
             // 
@@ -710,7 +812,7 @@
             this.contact_text_add.Location = new System.Drawing.Point(79, 65);
             this.contact_text_add.Name = "contact_text_add";
             this.contact_text_add.Size = new System.Drawing.Size(64, 20);
-            this.contact_text_add.TabIndex = 31;
+            this.contact_text_add.TabIndex = 2;
             // 
             // email_text_add
             // 
@@ -718,109 +820,7 @@
             this.email_text_add.Location = new System.Drawing.Point(79, 116);
             this.email_text_add.Name = "email_text_add";
             this.email_text_add.Size = new System.Drawing.Size(64, 20);
-            this.email_text_add.TabIndex = 33;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.Company_drop);
-            this.panel7.Controls.Add(this.label15);
-            this.panel7.Controls.Add(this.company_pay_listview);
-            this.panel7.Controls.Add(this.Company_payment_submit);
-            this.panel7.Controls.Add(this.to_date_pay);
-            this.panel7.Controls.Add(this.from_date_pay);
-            this.panel7.Controls.Add(this.label14);
-            this.panel7.Controls.Add(this.label13);
-            this.panel7.Controls.Add(this.label10);
-            this.panel7.Location = new System.Drawing.Point(184, 30);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(554, 243);
-            this.panel7.TabIndex = 3;
-            // 
-            // Company_drop
-            // 
-            this.Company_drop.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Company_drop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.Company_drop.FormattingEnabled = true;
-            this.Company_drop.Location = new System.Drawing.Point(70, 54);
-            this.Company_drop.MaxDropDownItems = 100;
-            this.Company_drop.Name = "Company_drop";
-            this.Company_drop.Size = new System.Drawing.Size(79, 21);
-            this.Company_drop.TabIndex = 30;
-            // 
-            // label15
-            // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(13, 57);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(51, 13);
-            this.label15.TabIndex = 10;
-            this.label15.Text = "Company";
-            // 
-            // company_pay_listview
-            // 
-            this.company_pay_listview.Location = new System.Drawing.Point(155, 54);
-            this.company_pay_listview.Name = "company_pay_listview";
-            this.company_pay_listview.Size = new System.Drawing.Size(354, 174);
-            this.company_pay_listview.TabIndex = 9;
-            this.company_pay_listview.UseCompatibleStateImageBehavior = false;
-            // 
-            // Company_payment_submit
-            // 
-            this.Company_payment_submit.Location = new System.Drawing.Point(74, 158);
-            this.Company_payment_submit.Name = "Company_payment_submit";
-            this.Company_payment_submit.Size = new System.Drawing.Size(75, 22);
-            this.Company_payment_submit.TabIndex = 8;
-            this.Company_payment_submit.Text = "Submit";
-            this.Company_payment_submit.UseVisualStyleBackColor = true;
-            this.Company_payment_submit.Click += new System.EventHandler(this.Company_payment_submit_Click);
-            // 
-            // to_date_pay
-            // 
-            this.to_date_pay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.to_date_pay.Location = new System.Drawing.Point(70, 107);
-            this.to_date_pay.Name = "to_date_pay";
-            this.to_date_pay.Size = new System.Drawing.Size(78, 20);
-            this.to_date_pay.TabIndex = 6;
-            // 
-            // from_date_pay
-            // 
-            this.from_date_pay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.from_date_pay.Location = new System.Drawing.Point(70, 81);
-            this.from_date_pay.Name = "from_date_pay";
-            this.from_date_pay.Size = new System.Drawing.Size(78, 20);
-            this.from_date_pay.TabIndex = 5;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(34, 87);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(30, 13);
-            this.label14.TabIndex = 4;
-            this.label14.Text = "From";
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(44, 114);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(20, 13);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "To";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 11);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(109, 15);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "Payment details";
+            this.email_text_add.TabIndex = 3;
             // 
             // Company
             // 
@@ -850,12 +850,12 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.Company_add.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }

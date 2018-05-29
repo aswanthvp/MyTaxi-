@@ -253,7 +253,7 @@
             this.dropdown_vehicle_list_maintenance.MaxDropDownItems = 100;
             this.dropdown_vehicle_list_maintenance.Name = "dropdown_vehicle_list_maintenance";
             this.dropdown_vehicle_list_maintenance.Size = new System.Drawing.Size(121, 23);
-            this.dropdown_vehicle_list_maintenance.TabIndex = 28;
+            this.dropdown_vehicle_list_maintenance.TabIndex = 1;
             // 
             // tabPage2
             // 
@@ -317,7 +317,7 @@
             this.Update_button.Location = new System.Drawing.Point(210, 6);
             this.Update_button.Name = "Update_button";
             this.Update_button.Size = new System.Drawing.Size(63, 23);
-            this.Update_button.TabIndex = 3;
+            this.Update_button.TabIndex = 10;
             this.Update_button.Text = "Update";
             this.Update_button.UseVisualStyleBackColor = true;
             this.Update_button.Visible = false;
@@ -329,7 +329,7 @@
             this.Cancel_button.Location = new System.Drawing.Point(141, 6);
             this.Cancel_button.Name = "Cancel_button";
             this.Cancel_button.Size = new System.Drawing.Size(63, 23);
-            this.Cancel_button.TabIndex = 2;
+            this.Cancel_button.TabIndex = 12;
             this.Cancel_button.Text = "Cancel";
             this.Cancel_button.UseVisualStyleBackColor = true;
             this.Cancel_button.Visible = false;
@@ -341,7 +341,7 @@
             this.Edit_button.Location = new System.Drawing.Point(3, 6);
             this.Edit_button.Name = "Edit_button";
             this.Edit_button.Size = new System.Drawing.Size(63, 23);
-            this.Edit_button.TabIndex = 0;
+            this.Edit_button.TabIndex = 4;
             this.Edit_button.Text = "Edit";
             this.Edit_button.UseVisualStyleBackColor = true;
             this.Edit_button.Click += new System.EventHandler(this.Edit_button_Click);
@@ -352,7 +352,7 @@
             this.Delet_button.Location = new System.Drawing.Point(72, 6);
             this.Delet_button.Name = "Delet_button";
             this.Delet_button.Size = new System.Drawing.Size(63, 23);
-            this.Delet_button.TabIndex = 1;
+            this.Delet_button.TabIndex = 13;
             this.Delet_button.Text = "Delete";
             this.Delet_button.UseVisualStyleBackColor = true;
             this.Delet_button.Click += new System.EventHandler(this.Delet_button_Click);
@@ -475,7 +475,7 @@
             this.km_text_expence.Name = "km_text_expence";
             this.km_text_expence.ReadOnly = true;
             this.km_text_expence.Size = new System.Drawing.Size(100, 14);
-            this.km_text_expence.TabIndex = 8;
+            this.km_text_expence.TabIndex = 9;
             // 
             // date_expence
             // 
@@ -485,7 +485,7 @@
             this.date_expence.Location = new System.Drawing.Point(141, 175);
             this.date_expence.Name = "date_expence";
             this.date_expence.Size = new System.Drawing.Size(100, 21);
-            this.date_expence.TabIndex = 9;
+            this.date_expence.TabIndex = 8;
             // 
             // maintenance_search_listView
             // 
@@ -560,7 +560,7 @@
             this.to_date.Location = new System.Drawing.Point(50, 106);
             this.to_date.Name = "to_date";
             this.to_date.Size = new System.Drawing.Size(105, 21);
-            this.to_date.TabIndex = 3;
+            this.to_date.TabIndex = 2;
             // 
             // label1
             // 
@@ -594,7 +594,7 @@
             this.from_date.Location = new System.Drawing.Point(50, 28);
             this.from_date.Name = "from_date";
             this.from_date.Size = new System.Drawing.Size(105, 21);
-            this.from_date.TabIndex = 2;
+            this.from_date.TabIndex = 1;
             // 
             // Submit_maintenance_search_button
             // 
@@ -602,7 +602,7 @@
             this.Submit_maintenance_search_button.Location = new System.Drawing.Point(65, 164);
             this.Submit_maintenance_search_button.Name = "Submit_maintenance_search_button";
             this.Submit_maintenance_search_button.Size = new System.Drawing.Size(75, 23);
-            this.Submit_maintenance_search_button.TabIndex = 4;
+            this.Submit_maintenance_search_button.TabIndex = 3;
             this.Submit_maintenance_search_button.Text = "Submit";
             this.Submit_maintenance_search_button.UseVisualStyleBackColor = true;
             this.Submit_maintenance_search_button.Click += new System.EventHandler(this.Submit_maintenance_search_button_Click);

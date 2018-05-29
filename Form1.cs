@@ -30,7 +30,7 @@ namespace MyTaxi
             maintenance1.Visible = false;
             driver1.Visible = false;
             company1.Visible = false;
-
+            database1.Visible = false;
             home_new.Load_vehicle();
             home_new.Load_company();
             home_new.Load_driver();
@@ -43,7 +43,7 @@ namespace MyTaxi
             maintenance1.Visible = true;          
             driver1.Visible = false;
             company1.Visible = false;
-
+            database1.Visible = false;
             maintenance1.Load_vehicle();
 
         }
@@ -55,7 +55,7 @@ namespace MyTaxi
             maintenance1.Visible = false;
             driver1.Visible = true;
             company1.Visible = false;
-
+            database1.Visible = false;
         }
 
         private void Company_Click(object sender, EventArgs e)
@@ -65,7 +65,7 @@ namespace MyTaxi
             maintenance1.Visible = false;
             driver1.Visible = false;
             company1.Visible = true;
-
+            database1.Visible = false;
         }
 
         private void Vehicle_button_Click(object sender, EventArgs e)
@@ -74,6 +74,17 @@ namespace MyTaxi
             company1.Visible = false;
             home_new.Visible = false;
             maintenance1.Visible = false;
+            driver1.Visible = false;
+            database1.Visible = false;
+        }
+
+        private void backup_button_Click(object sender, EventArgs e)
+        {
+            vehicle_new.Visible = false;
+            company1.Visible = false;`
+            home_new.Visible = false;
+            maintenance1.Visible = false;
+            database1.Visible = true;
             driver1.Visible = false;
         }
 
@@ -100,6 +111,8 @@ namespace MyTaxi
         {
             flag = false;
         }
+
+        
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {

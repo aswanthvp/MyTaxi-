@@ -52,6 +52,12 @@
     <Compile Include="company.Designer.cs">
       <DependentUpon>company.cs</DependentUpon>
     </Compile>
+    <Compile Include="database.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="database.Designer.cs">
+      <DependentUpon>database.cs</DependentUpon>
+    </Compile>
     <Compile Include="Driver.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </Compile>
     <EmbeddedResource Include="company.resx">
       <DependentUpon>company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="database.resx">
+      <DependentUpon>database.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Driver.resx">
       <DependentUpon>Driver.cs</DependentUpon>
