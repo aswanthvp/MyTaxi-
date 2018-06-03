@@ -68,8 +68,12 @@ namespace MyTaxi
             try
             {
                 // Creates the database.
-                ExecuteSql("master", "CREATE DATABASE " + strDBName + "");
+
+                ExecuteSql("master", "CREATE DATABASE " + strDBName);
                 ExecuteSql(strDBName, "ALTER DATABASE MyTaxi SET AUTO_CLOSE OFF");
+
+                ExecuteSql("master", "CREATE DATABASE " + strDBName);
+
 
                 // Creates the tables.
                 ExecuteSql(strDBName, GetSql("COMPANY.txt"));
