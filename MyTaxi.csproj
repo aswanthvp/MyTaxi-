@@ -58,6 +58,7 @@
     <Compile Include="database.Designer.cs">
       <DependentUpon>database.cs</DependentUpon>
     </Compile>
+    <Compile Include="DGVPrinter.cs" />
     <Compile Include="Driver.cs">
       <SubType>UserControl</SubType>
     </Compile>

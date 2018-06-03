@@ -81,7 +81,7 @@ namespace MyTaxi
         private void backup_button_Click(object sender, EventArgs e)
         {
             vehicle_new.Visible = false;
-            company1.Visible = false;`
+            company1.Visible = false;
             home_new.Visible = false;
             maintenance1.Visible = false;
             database1.Visible = true;

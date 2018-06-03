@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Runtime.Remoting.Contexts;
+using DGVPrinterHelper;
 
 namespace MyTaxi
 {
@@ -23,6 +24,7 @@ namespace MyTaxi
             Listcoloum_load();
             Load_driver();
             Load_company();
+           
         }
 
         //To load the vehicle list into the droplist
@@ -180,6 +182,8 @@ namespace MyTaxi
                     Advance_text_company.Text = "0";
                 if (Advance_text_US.Text == "")
                     Advance_text_US.Text = "0";
+                if (qty_text.Text == "")
+                    qty_text.Text = "0";
 
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("insert_trip_details", conn);
@@ -193,6 +197,7 @@ namespace MyTaxi
                 cmd.Parameters.AddWithValue("@diesel_cost", Convert.ToInt32( Diesel_text.Text.Trim()));
                 cmd.Parameters.AddWithValue("@diesel_cost_us", Convert.ToInt32(diesel_text_us.Text.Trim()));
                 cmd.Parameters.AddWithValue("@material", Material_text.Text.Trim());
+                cmd.Parameters.AddWithValue("@qty",Convert.ToInt32( qty_text.Text.Trim()));
                 cmd.Parameters.AddWithValue("@driver",driver_droplist.Text.Trim());
                 cmd.Parameters.AddWithValue("@remarks", Convert.ToInt32( Remarks_text.Text.Trim()));
                 cmd.Parameters.AddWithValue("@date", Convert.ToDateTime(date_pick.Text.Trim()));
@@ -213,6 +218,7 @@ namespace MyTaxi
                 Material_text.Clear();
                 Advance_text_company.Clear();
                 Advance_text_US.Clear();
+                qty_text.Clear();
 
    
                 MessageBox.Show("Trip details updated");
@@ -229,7 +235,7 @@ namespace MyTaxi
 
        
         public void Listcoloum_load()
-        {
+        {            
             vehicle_listview.Columns.Add("Company");
             vehicle_listview.Columns.Add("Cost/km");
             vehicle_listview.Columns.Add("KM");
@@ -271,6 +277,53 @@ namespace MyTaxi
                 conn.Close();
             }
         }
+
+        
+
+        private void trip_submit_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn_new = new SqlConnection();
+            conn_new.ConnectionString = "Data Source=(local)\\SQLEXPRESS;Initial Catalog=MyTaxi;Integrated Security=True";
+            try
+            {
+                conn_new.Open();
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                // Your Connection String here
+                SqlCommand cmd = new SqlCommand("trip_list_show", conn_new);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("from", Convert.ToDateTime(from_trip.Text.Trim()));
+                cmd.Parameters.AddWithValue("to", Convert.ToDateTime(to_trip.Text.Trim()));
+                da.SelectCommand = cmd;
+                da.Fill(dt);
+                Trip_datagrid.DataSource = dt;
+                Trip_datagrid.ReadOnly = true;
+                
+
+
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Error occured");
+            }
+            finally
+            {
+                conn_new.Close();
+            }
+        }
+
+        private void print_button_Click(object sender, EventArgs e)
+        {
+            DGVPrinter printer = new DGVPrinter();
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.printDocument.DefaultPageSettings.Landscape = true;
+            printer.PrintDataGridView(Trip_datagrid);
+
+        }
+
+       
 
         private void driver_droplist_SelectedIndexChanged(object sender, EventArgs e)
         {

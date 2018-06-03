@@ -51,11 +51,9 @@ namespace MyTaxi
             this.Driver_label = new System.Windows.Forms.Label();
             this.Date_label = new System.Windows.Forms.Label();
             this.Diesel = new System.Windows.Forms.Label();
-            this.Material_text = new System.Windows.Forms.TextBox();
             this.Advance_label = new System.Windows.Forms.Label();
             this.dropdown_vehicle_trip = new System.Windows.Forms.ComboBox();
             this.company_label = new System.Windows.Forms.Label();
-            this.Material_label = new System.Windows.Forms.Label();
             this.pending_info_text = new System.Windows.Forms.Label();
             this.driver_droplist = new System.Windows.Forms.ComboBox();
             this.Quality_in_feeds_text = new System.Windows.Forms.TextBox();
@@ -73,20 +71,28 @@ namespace MyTaxi
             this.label14 = new System.Windows.Forms.Label();
             this.diesel_text_us = new System.Windows.Forms.TextBox();
             this.Diesel_text = new System.Windows.Forms.TextBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
+            this.Material_label = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.Material_text = new System.Windows.Forms.TextBox();
+            this.qty_text = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Submit_button = new System.Windows.Forms.Button();
             this.Trip_details = new System.Windows.Forms.TabPage();
             this.TripDetails_panel = new System.Windows.Forms.Panel();
+            this.delete_label = new System.Windows.Forms.Label();
+            this.Delete = new System.Windows.Forms.Button();
             this.vehicle_listview = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.TripDetails_Table = new System.Windows.Forms.TableLayoutPanel();
+            this.dropdown_vehicle_details = new System.Windows.Forms.ComboBox();
             this.to_date = new System.Windows.Forms.DateTimePicker();
             this.Vehicle = new System.Windows.Forms.Label();
             this.To1_label = new System.Windows.Forms.Label();
             this.From1_label = new System.Windows.Forms.Label();
-            this.Submit1_button = new System.Windows.Forms.Button();
-            this.dropdown_vehicle_details = new System.Windows.Forms.ComboBox();
             this.from_date = new System.Windows.Forms.DateTimePicker();
+            this.Submit1_button = new System.Windows.Forms.Button();
             this.Total = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.Fine_money = new System.Windows.Forms.Label();
@@ -108,8 +114,16 @@ namespace MyTaxi
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Delete = new System.Windows.Forms.Button();
-            this.delete_label = new System.Windows.Forms.Label();
+            this.Print_trip = new System.Windows.Forms.TabPage();
+            this.print_button = new System.Windows.Forms.Button();
+            this.Trip_datagrid = new System.Windows.Forms.DataGridView();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.from_trip = new System.Windows.Forms.DateTimePicker();
+            this.label18 = new System.Windows.Forms.Label();
+            this.to_trip = new System.Windows.Forms.DateTimePicker();
+            this.label17 = new System.Windows.Forms.Label();
+            this.trip_submit = new System.Windows.Forms.Button();
             this.Home_tab.SuspendLayout();
             this.Trip.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -118,6 +132,8 @@ namespace MyTaxi
             this.tableLayoutPanel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Trip_details.SuspendLayout();
             this.TripDetails_panel.SuspendLayout();
@@ -125,6 +141,9 @@ namespace MyTaxi
             this.Total.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.Print_trip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Trip_datagrid)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // Home_tab
@@ -133,6 +152,7 @@ namespace MyTaxi
             this.Home_tab.Controls.Add(this.Trip);
             this.Home_tab.Controls.Add(this.Trip_details);
             this.Home_tab.Controls.Add(this.Total);
+            this.Home_tab.Controls.Add(this.Print_trip);
             this.Home_tab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Home_tab.Location = new System.Drawing.Point(0, 0);
             this.Home_tab.Name = "Home_tab";
@@ -147,7 +167,7 @@ namespace MyTaxi
             this.Trip.Location = new System.Drawing.Point(4, 25);
             this.Trip.Name = "Trip";
             this.Trip.Padding = new System.Windows.Forms.Padding(3);
-            this.Trip.Size = new System.Drawing.Size(858, 326);
+            this.Trip.Size = new System.Drawing.Size(858, 377);
             this.Trip.TabIndex = 0;
             this.Trip.Text = "Trip";
             this.Trip.UseVisualStyleBackColor = true;
@@ -158,7 +178,7 @@ namespace MyTaxi
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(852, 245);
+            this.panel2.Size = new System.Drawing.Size(852, 296);
             this.panel2.TabIndex = 2;
             // 
             // tableLayoutPanel1
@@ -188,11 +208,9 @@ namespace MyTaxi
             this.tableLayoutPanel1.Controls.Add(this.Driver_label, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.Date_label, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.Diesel, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.Material_text, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.Advance_label, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.dropdown_vehicle_trip, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.company_label, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.Material_label, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.pending_info_text, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.driver_droplist, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.Quality_in_feeds_text, 1, 4);
@@ -200,6 +218,8 @@ namespace MyTaxi
             this.tableLayoutPanel1.Controls.Add(this.date_pick, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 5, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.panel7, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 3, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -209,7 +229,7 @@ namespace MyTaxi
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(852, 245);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(852, 296);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // Quality_in_feeds_label
@@ -219,7 +239,7 @@ namespace MyTaxi
             this.Quality_in_feeds_label.BackColor = System.Drawing.Color.Transparent;
             this.Quality_in_feeds_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Quality_in_feeds_label.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.Quality_in_feeds_label.Location = new System.Drawing.Point(44, 214);
+            this.Quality_in_feeds_label.Location = new System.Drawing.Point(44, 259);
             this.Quality_in_feeds_label.Name = "Quality_in_feeds_label";
             this.Quality_in_feeds_label.Size = new System.Drawing.Size(95, 13);
             this.Quality_in_feeds_label.TabIndex = 28;
@@ -232,7 +252,7 @@ namespace MyTaxi
             this.vehicle_label.BackColor = System.Drawing.Color.Transparent;
             this.vehicle_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vehicle_label.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.vehicle_label.Location = new System.Drawing.Point(90, 18);
+            this.vehicle_label.Location = new System.Drawing.Point(90, 23);
             this.vehicle_label.Name = "vehicle_label";
             this.vehicle_label.Size = new System.Drawing.Size(49, 13);
             this.vehicle_label.TabIndex = 0;
@@ -245,7 +265,7 @@ namespace MyTaxi
             this.Pending_label.BackColor = System.Drawing.Color.Transparent;
             this.Pending_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Pending_label.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.Pending_label.Location = new System.Drawing.Point(365, 116);
+            this.Pending_label.Location = new System.Drawing.Point(365, 141);
             this.Pending_label.Name = "Pending_label";
             this.Pending_label.Size = new System.Drawing.Size(53, 13);
             this.Pending_label.TabIndex = 26;
@@ -258,7 +278,7 @@ namespace MyTaxi
             this.From_label.BackColor = System.Drawing.Color.Transparent;
             this.From_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.From_label.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.From_label.Location = new System.Drawing.Point(384, 18);
+            this.From_label.Location = new System.Drawing.Point(384, 23);
             this.From_label.Name = "From_label";
             this.From_label.Size = new System.Drawing.Size(34, 13);
             this.From_label.TabIndex = 4;
@@ -267,7 +287,7 @@ namespace MyTaxi
             // From_text
             // 
             this.From_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.From_text.Location = new System.Drawing.Point(424, 14);
+            this.From_text.Location = new System.Drawing.Point(424, 19);
             this.From_text.Name = "From_text";
             this.From_text.Size = new System.Drawing.Size(83, 20);
             this.From_text.TabIndex = 2;
@@ -279,7 +299,7 @@ namespace MyTaxi
             this.To_label.BackColor = System.Drawing.Color.Transparent;
             this.To_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.To_label.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.To_label.Location = new System.Drawing.Point(664, 18);
+            this.To_label.Location = new System.Drawing.Point(664, 23);
             this.To_label.Name = "To_label";
             this.To_label.Size = new System.Drawing.Size(22, 13);
             this.To_label.TabIndex = 9;
@@ -288,7 +308,7 @@ namespace MyTaxi
             // To_text
             // 
             this.To_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.To_text.Location = new System.Drawing.Point(692, 14);
+            this.To_text.Location = new System.Drawing.Point(692, 19);
             this.To_text.Name = "To_text";
             this.To_text.Size = new System.Drawing.Size(82, 20);
             this.To_text.TabIndex = 3;
@@ -300,7 +320,7 @@ namespace MyTaxi
             this.KM_label.BackColor = System.Drawing.Color.Transparent;
             this.KM_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KM_label.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.KM_label.Location = new System.Drawing.Point(114, 67);
+            this.KM_label.Location = new System.Drawing.Point(114, 82);
             this.KM_label.Name = "KM_label";
             this.KM_label.Size = new System.Drawing.Size(25, 13);
             this.KM_label.TabIndex = 6;
@@ -309,7 +329,7 @@ namespace MyTaxi
             // KM_text
             // 
             this.KM_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.KM_text.Location = new System.Drawing.Point(145, 63);
+            this.KM_text.Location = new System.Drawing.Point(145, 78);
             this.KM_text.Name = "KM_text";
             this.KM_text.Size = new System.Drawing.Size(83, 20);
             this.KM_text.TabIndex = 4;
@@ -321,7 +341,7 @@ namespace MyTaxi
             this.Remarks_label.BackColor = System.Drawing.Color.Transparent;
             this.Remarks_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Remarks_label.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.Remarks_label.Location = new System.Drawing.Point(598, 165);
+            this.Remarks_label.Location = new System.Drawing.Point(598, 200);
             this.Remarks_label.Name = "Remarks_label";
             this.Remarks_label.Size = new System.Drawing.Size(88, 13);
             this.Remarks_label.TabIndex = 5;
@@ -330,7 +350,7 @@ namespace MyTaxi
             // Remarks_text
             // 
             this.Remarks_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Remarks_text.Location = new System.Drawing.Point(692, 161);
+            this.Remarks_text.Location = new System.Drawing.Point(692, 196);
             this.Remarks_text.Name = "Remarks_text";
             this.Remarks_text.Size = new System.Drawing.Size(82, 20);
             this.Remarks_text.TabIndex = 13;
@@ -338,7 +358,7 @@ namespace MyTaxi
             // Cost_text
             // 
             this.Cost_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Cost_text.Location = new System.Drawing.Point(424, 63);
+            this.Cost_text.Location = new System.Drawing.Point(424, 78);
             this.Cost_text.Name = "Cost_text";
             this.Cost_text.Size = new System.Drawing.Size(83, 20);
             this.Cost_text.TabIndex = 5;
@@ -350,7 +370,7 @@ namespace MyTaxi
             this.Cost_label.BackColor = System.Drawing.Color.Transparent;
             this.Cost_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cost_label.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.Cost_label.Location = new System.Drawing.Point(362, 67);
+            this.Cost_label.Location = new System.Drawing.Point(362, 82);
             this.Cost_label.Name = "Cost_label";
             this.Cost_label.Size = new System.Drawing.Size(56, 13);
             this.Cost_label.TabIndex = 2;
@@ -363,7 +383,7 @@ namespace MyTaxi
             this.Driver_label.BackColor = System.Drawing.Color.Transparent;
             this.Driver_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Driver_label.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.Driver_label.Location = new System.Drawing.Point(98, 116);
+            this.Driver_label.Location = new System.Drawing.Point(98, 141);
             this.Driver_label.Name = "Driver_label";
             this.Driver_label.Size = new System.Drawing.Size(41, 13);
             this.Driver_label.TabIndex = 3;
@@ -376,7 +396,7 @@ namespace MyTaxi
             this.Date_label.BackColor = System.Drawing.Color.Transparent;
             this.Date_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Date_label.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.Date_label.Location = new System.Drawing.Point(652, 67);
+            this.Date_label.Location = new System.Drawing.Point(652, 82);
             this.Date_label.Name = "Date_label";
             this.Date_label.Size = new System.Drawing.Size(34, 13);
             this.Date_label.TabIndex = 21;
@@ -389,19 +409,11 @@ namespace MyTaxi
             this.Diesel.BackColor = System.Drawing.Color.Transparent;
             this.Diesel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Diesel.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.Diesel.Location = new System.Drawing.Point(97, 165);
+            this.Diesel.Location = new System.Drawing.Point(97, 200);
             this.Diesel.Name = "Diesel";
             this.Diesel.Size = new System.Drawing.Size(42, 13);
             this.Diesel.TabIndex = 23;
             this.Diesel.Text = "Diesel";
-            // 
-            // Material_text
-            // 
-            this.Material_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Material_text.Location = new System.Drawing.Point(424, 161);
-            this.Material_text.Name = "Material_text";
-            this.Material_text.Size = new System.Drawing.Size(83, 20);
-            this.Material_text.TabIndex = 12;
             // 
             // Advance_label
             // 
@@ -410,7 +422,7 @@ namespace MyTaxi
             this.Advance_label.BackColor = System.Drawing.Color.Transparent;
             this.Advance_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Advance_label.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.Advance_label.Location = new System.Drawing.Point(629, 116);
+            this.Advance_label.Location = new System.Drawing.Point(629, 141);
             this.Advance_label.Name = "Advance_label";
             this.Advance_label.Size = new System.Drawing.Size(57, 13);
             this.Advance_label.TabIndex = 8;
@@ -423,7 +435,7 @@ namespace MyTaxi
             this.dropdown_vehicle_trip.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.dropdown_vehicle_trip.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdown_vehicle_trip.FormattingEnabled = true;
-            this.dropdown_vehicle_trip.Location = new System.Drawing.Point(145, 14);
+            this.dropdown_vehicle_trip.Location = new System.Drawing.Point(145, 19);
             this.dropdown_vehicle_trip.MaxDropDownItems = 100;
             this.dropdown_vehicle_trip.Name = "dropdown_vehicle_trip";
             this.dropdown_vehicle_trip.Size = new System.Drawing.Size(83, 21);
@@ -437,29 +449,16 @@ namespace MyTaxi
             this.company_label.BackColor = System.Drawing.Color.Transparent;
             this.company_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.company_label.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.company_label.Location = new System.Drawing.Point(360, 214);
+            this.company_label.Location = new System.Drawing.Point(360, 259);
             this.company_label.Name = "company_label";
             this.company_label.Size = new System.Drawing.Size(58, 13);
             this.company_label.TabIndex = 30;
             this.company_label.Text = "Company";
             // 
-            // Material_label
-            // 
-            this.Material_label.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Material_label.AutoSize = true;
-            this.Material_label.BackColor = System.Drawing.Color.Transparent;
-            this.Material_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Material_label.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.Material_label.Location = new System.Drawing.Point(366, 165);
-            this.Material_label.Name = "Material_label";
-            this.Material_label.Size = new System.Drawing.Size(52, 13);
-            this.Material_label.TabIndex = 7;
-            this.Material_label.Text = "Material";
-            // 
             // pending_info_text
             // 
             this.pending_info_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pending_info_text.Location = new System.Drawing.Point(424, 111);
+            this.pending_info_text.Location = new System.Drawing.Point(424, 136);
             this.pending_info_text.Name = "pending_info_text";
             this.pending_info_text.Size = new System.Drawing.Size(83, 23);
             this.pending_info_text.TabIndex = 32;
@@ -472,7 +471,7 @@ namespace MyTaxi
             this.driver_droplist.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.driver_droplist.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.driver_droplist.FormattingEnabled = true;
-            this.driver_droplist.Location = new System.Drawing.Point(145, 112);
+            this.driver_droplist.Location = new System.Drawing.Point(145, 137);
             this.driver_droplist.MaxDropDownItems = 100;
             this.driver_droplist.Name = "driver_droplist";
             this.driver_droplist.Size = new System.Drawing.Size(83, 21);
@@ -482,7 +481,7 @@ namespace MyTaxi
             // Quality_in_feeds_text
             // 
             this.Quality_in_feeds_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Quality_in_feeds_text.Location = new System.Drawing.Point(145, 210);
+            this.Quality_in_feeds_text.Location = new System.Drawing.Point(145, 256);
             this.Quality_in_feeds_text.Name = "Quality_in_feeds_text";
             this.Quality_in_feeds_text.Size = new System.Drawing.Size(83, 20);
             this.Quality_in_feeds_text.TabIndex = 14;
@@ -495,7 +494,7 @@ namespace MyTaxi
             this.company_text.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.company_text.FormattingEnabled = true;
             this.company_text.ItemHeight = 13;
-            this.company_text.Location = new System.Drawing.Point(424, 210);
+            this.company_text.Location = new System.Drawing.Point(424, 255);
             this.company_text.MaxDropDownItems = 100;
             this.company_text.Name = "company_text";
             this.company_text.Size = new System.Drawing.Size(83, 21);
@@ -505,7 +504,7 @@ namespace MyTaxi
             // 
             this.date_pick.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.date_pick.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_pick.Location = new System.Drawing.Point(692, 63);
+            this.date_pick.Location = new System.Drawing.Point(692, 78);
             this.date_pick.Name = "date_pick";
             this.date_pick.Size = new System.Drawing.Size(82, 20);
             this.date_pick.TabIndex = 6;
@@ -515,9 +514,9 @@ namespace MyTaxi
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.tableLayoutPanel2);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(692, 101);
+            this.panel3.Location = new System.Drawing.Point(692, 121);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(157, 43);
+            this.panel3.Size = new System.Drawing.Size(157, 53);
             this.panel3.TabIndex = 36;
             // 
             // tableLayoutPanel2
@@ -535,7 +534,7 @@ namespace MyTaxi
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(157, 43);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(157, 53);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label3
@@ -545,7 +544,7 @@ namespace MyTaxi
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label3.Location = new System.Drawing.Point(90, 25);
+            this.label3.Location = new System.Drawing.Point(90, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(47, 13);
             this.label3.TabIndex = 22;
@@ -558,7 +557,7 @@ namespace MyTaxi
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label2.Location = new System.Drawing.Point(90, 4);
+            this.label2.Location = new System.Drawing.Point(90, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 21;
@@ -573,7 +572,7 @@ namespace MyTaxi
             // 
             // Advance_text_US
             // 
-            this.Advance_text_US.Location = new System.Drawing.Point(3, 24);
+            this.Advance_text_US.Location = new System.Drawing.Point(3, 29);
             this.Advance_text_US.Name = "Advance_text_US";
             this.Advance_text_US.Size = new System.Drawing.Size(81, 20);
             this.Advance_text_US.TabIndex = 9;
@@ -583,9 +582,9 @@ namespace MyTaxi
             this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.Controls.Add(this.tableLayoutPanel3);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(145, 150);
+            this.panel6.Location = new System.Drawing.Point(145, 180);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(143, 43);
+            this.panel6.Size = new System.Drawing.Size(143, 53);
             this.panel6.TabIndex = 37;
             // 
             // tableLayoutPanel3
@@ -603,7 +602,7 @@ namespace MyTaxi
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(143, 43);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(143, 53);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label15
@@ -613,7 +612,7 @@ namespace MyTaxi
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label15.Location = new System.Drawing.Point(84, 25);
+            this.label15.Location = new System.Drawing.Point(84, 33);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(47, 13);
             this.label15.TabIndex = 27;
@@ -626,7 +625,7 @@ namespace MyTaxi
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label14.Location = new System.Drawing.Point(84, 4);
+            this.label14.Location = new System.Drawing.Point(84, 6);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(56, 13);
             this.label14.TabIndex = 26;
@@ -635,7 +634,7 @@ namespace MyTaxi
             // diesel_text_us
             // 
             this.diesel_text_us.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.diesel_text_us.Location = new System.Drawing.Point(3, 24);
+            this.diesel_text_us.Location = new System.Drawing.Point(3, 29);
             this.diesel_text_us.Name = "diesel_text_us";
             this.diesel_text_us.Size = new System.Drawing.Size(75, 20);
             this.diesel_text_us.TabIndex = 11;
@@ -648,13 +647,77 @@ namespace MyTaxi
             this.Diesel_text.Size = new System.Drawing.Size(75, 20);
             this.Diesel_text.TabIndex = 10;
             // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Transparent;
+            this.panel7.Controls.Add(this.label19);
+            this.panel7.Controls.Add(this.Material_label);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(294, 180);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(124, 53);
+            this.panel7.TabIndex = 38;
+            // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.label19.Location = new System.Drawing.Point(68, 29);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(54, 13);
+            this.label19.TabIndex = 17;
+            this.label19.Text = "Quantity";
+            // 
+            // Material_label
+            // 
+            this.Material_label.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Material_label.AutoSize = true;
+            this.Material_label.BackColor = System.Drawing.Color.Transparent;
+            this.Material_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Material_label.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.Material_label.Location = new System.Drawing.Point(68, 6);
+            this.Material_label.Name = "Material_label";
+            this.Material_label.Size = new System.Drawing.Size(52, 13);
+            this.Material_label.TabIndex = 7;
+            this.Material_label.Text = "Material";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.flowLayoutPanel1.Controls.Add(this.Material_text);
+            this.flowLayoutPanel1.Controls.Add(this.qty_text);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(424, 180);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(136, 53);
+            this.flowLayoutPanel1.TabIndex = 39;
+            // 
+            // Material_text
+            // 
+            this.Material_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Material_text.Location = new System.Drawing.Point(3, 3);
+            this.Material_text.Name = "Material_text";
+            this.Material_text.Size = new System.Drawing.Size(83, 20);
+            this.Material_text.TabIndex = 12;
+            // 
+            // qty_text
+            // 
+            this.qty_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.qty_text.Location = new System.Drawing.Point(3, 29);
+            this.qty_text.Name = "qty_text";
+            this.qty_text.Size = new System.Drawing.Size(83, 20);
+            this.qty_text.TabIndex = 17;
+            // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.Submit_button);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(3, 248);
+            this.panel1.Location = new System.Drawing.Point(3, 299);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(852, 75);
             this.panel1.TabIndex = 1;
@@ -694,6 +757,29 @@ namespace MyTaxi
             this.TripDetails_panel.Size = new System.Drawing.Size(695, 371);
             this.TripDetails_panel.TabIndex = 1;
             // 
+            // delete_label
+            // 
+            this.delete_label.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.delete_label.AutoSize = true;
+            this.delete_label.Location = new System.Drawing.Point(466, 331);
+            this.delete_label.Name = "delete_label";
+            this.delete_label.Size = new System.Drawing.Size(193, 13);
+            this.delete_label.TabIndex = 6;
+            this.delete_label.Text = "(press to delete the selected trip details)";
+            this.delete_label.Visible = false;
+            // 
+            // Delete
+            // 
+            this.Delete.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Delete.Location = new System.Drawing.Point(369, 326);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(91, 23);
+            this.Delete.TabIndex = 5;
+            this.Delete.Text = "Delete";
+            this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Visible = false;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            // 
             // vehicle_listview
             // 
             this.vehicle_listview.FullRowSelect = true;
@@ -721,11 +807,11 @@ namespace MyTaxi
             this.TripDetails_Table.ColumnCount = 2;
             this.TripDetails_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.TripDetails_Table.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.TripDetails_Table.Controls.Add(this.dropdown_vehicle_details, 1, 0);
             this.TripDetails_Table.Controls.Add(this.to_date, 1, 2);
             this.TripDetails_Table.Controls.Add(this.Vehicle, 0, 0);
             this.TripDetails_Table.Controls.Add(this.To1_label, 0, 2);
             this.TripDetails_Table.Controls.Add(this.From1_label, 0, 1);
-            this.TripDetails_Table.Controls.Add(this.dropdown_vehicle_details, 1, 0);
             this.TripDetails_Table.Controls.Add(this.from_date, 1, 1);
             this.TripDetails_Table.Controls.Add(this.Submit1_button, 1, 3);
             this.TripDetails_Table.Dock = System.Windows.Forms.DockStyle.Left;
@@ -738,6 +824,17 @@ namespace MyTaxi
             this.TripDetails_Table.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.TripDetails_Table.Size = new System.Drawing.Size(157, 371);
             this.TripDetails_Table.TabIndex = 0;
+            // 
+            // dropdown_vehicle_details
+            // 
+            this.dropdown_vehicle_details.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dropdown_vehicle_details.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.dropdown_vehicle_details.FormattingEnabled = true;
+            this.dropdown_vehicle_details.Location = new System.Drawing.Point(57, 35);
+            this.dropdown_vehicle_details.MaxDropDownItems = 100;
+            this.dropdown_vehicle_details.Name = "dropdown_vehicle_details";
+            this.dropdown_vehicle_details.Size = new System.Drawing.Size(91, 21);
+            this.dropdown_vehicle_details.TabIndex = 1;
             // 
             // to_date
             // 
@@ -778,6 +875,15 @@ namespace MyTaxi
             this.From1_label.TabIndex = 1;
             this.From1_label.Text = "From";
             // 
+            // from_date
+            // 
+            this.from_date.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.from_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.from_date.Location = new System.Drawing.Point(57, 128);
+            this.from_date.Name = "from_date";
+            this.from_date.Size = new System.Drawing.Size(97, 20);
+            this.from_date.TabIndex = 2;
+            // 
             // Submit1_button
             // 
             this.Submit1_button.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -789,26 +895,6 @@ namespace MyTaxi
             this.Submit1_button.UseVisualStyleBackColor = true;
             this.Submit1_button.Click += new System.EventHandler(this.Submit1_button_Click);
             // 
-            // dropdown_vehicle_details
-            // 
-            this.dropdown_vehicle_details.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dropdown_vehicle_details.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.dropdown_vehicle_details.FormattingEnabled = true;
-            this.dropdown_vehicle_details.Location = new System.Drawing.Point(57, 35);
-            this.dropdown_vehicle_details.MaxDropDownItems = 100;
-            this.dropdown_vehicle_details.Name = "dropdown_vehicle_details";
-            this.dropdown_vehicle_details.Size = new System.Drawing.Size(91, 21);
-            this.dropdown_vehicle_details.TabIndex = 1;
-            // 
-            // from_date
-            // 
-            this.from_date.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.from_date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.from_date.Location = new System.Drawing.Point(57, 128);
-            this.from_date.Name = "from_date";
-            this.from_date.Size = new System.Drawing.Size(97, 20);
-            this.from_date.TabIndex = 2;
-            // 
             // Total
             // 
             this.Total.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Total.BackgroundImage")));
@@ -819,7 +905,7 @@ namespace MyTaxi
             this.Total.Location = new System.Drawing.Point(4, 25);
             this.Total.Name = "Total";
             this.Total.Padding = new System.Windows.Forms.Padding(3);
-            this.Total.Size = new System.Drawing.Size(858, 326);
+            this.Total.Size = new System.Drawing.Size(858, 377);
             this.Total.TabIndex = 2;
             this.Total.Text = "Total";
             this.Total.UseVisualStyleBackColor = true;
@@ -1043,28 +1129,122 @@ namespace MyTaxi
             this.label4.TabIndex = 1;
             this.label4.Text = "Select the dates";
             // 
-            // Delete
+            // Print_trip
             // 
-            this.Delete.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Delete.Location = new System.Drawing.Point(369, 326);
-            this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(91, 23);
-            this.Delete.TabIndex = 5;
-            this.Delete.Text = "Delete";
-            this.Delete.UseVisualStyleBackColor = true;
-            this.Delete.Visible = false;
-            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            this.Print_trip.Controls.Add(this.print_button);
+            this.Print_trip.Controls.Add(this.Trip_datagrid);
+            this.Print_trip.Controls.Add(this.label16);
+            this.Print_trip.Controls.Add(this.tableLayoutPanel4);
+            this.Print_trip.Location = new System.Drawing.Point(4, 25);
+            this.Print_trip.Name = "Print_trip";
+            this.Print_trip.Padding = new System.Windows.Forms.Padding(3);
+            this.Print_trip.Size = new System.Drawing.Size(858, 377);
+            this.Print_trip.TabIndex = 3;
+            this.Print_trip.Text = "Print";
+            this.Print_trip.UseVisualStyleBackColor = true;
             // 
-            // delete_label
+            // print_button
             // 
-            this.delete_label.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.delete_label.AutoSize = true;
-            this.delete_label.Location = new System.Drawing.Point(466, 331);
-            this.delete_label.Name = "delete_label";
-            this.delete_label.Size = new System.Drawing.Size(193, 13);
-            this.delete_label.TabIndex = 6;
-            this.delete_label.Text = "(press to delete the selected trip details)";
-            this.delete_label.Visible = false;
+            this.print_button.Location = new System.Drawing.Point(245, 328);
+            this.print_button.Name = "print_button";
+            this.print_button.Size = new System.Drawing.Size(75, 23);
+            this.print_button.TabIndex = 4;
+            this.print_button.Text = "Print";
+            this.print_button.UseVisualStyleBackColor = true;
+            this.print_button.Click += new System.EventHandler(this.print_button_Click);
+            // 
+            // Trip_datagrid
+            // 
+            this.Trip_datagrid.AllowUserToAddRows = false;
+            this.Trip_datagrid.AllowUserToDeleteRows = false;
+            this.Trip_datagrid.AllowUserToOrderColumns = true;
+            this.Trip_datagrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.Trip_datagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Trip_datagrid.Location = new System.Drawing.Point(189, 72);
+            this.Trip_datagrid.Name = "Trip_datagrid";
+            this.Trip_datagrid.ReadOnly = true;
+            this.Trip_datagrid.RowHeadersVisible = false;
+            this.Trip_datagrid.Size = new System.Drawing.Size(647, 235);
+            this.Trip_datagrid.TabIndex = 3;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(6, 29);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(231, 15);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Select the date to get the tri details";
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel4.Controls.Add(this.from_trip, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.label18, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.to_trip, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label17, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.trip_submit, 1, 2);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(6, 72);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(157, 199);
+            this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // from_trip
+            // 
+            this.from_trip.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.from_trip.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.from_trip.Location = new System.Drawing.Point(57, 23);
+            this.from_trip.Name = "from_trip";
+            this.from_trip.Size = new System.Drawing.Size(97, 20);
+            this.from_trip.TabIndex = 2;
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(21, 26);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(30, 13);
+            this.label18.TabIndex = 1;
+            this.label18.Text = "From";
+            // 
+            // to_trip
+            // 
+            this.to_trip.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.to_trip.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.to_trip.Location = new System.Drawing.Point(57, 89);
+            this.to_trip.Name = "to_trip";
+            this.to_trip.Size = new System.Drawing.Size(97, 20);
+            this.to_trip.TabIndex = 3;
+            // 
+            // label17
+            // 
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(31, 92);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(20, 13);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "To";
+            // 
+            // trip_submit
+            // 
+            this.trip_submit.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.trip_submit.Location = new System.Drawing.Point(57, 154);
+            this.trip_submit.Name = "trip_submit";
+            this.trip_submit.Size = new System.Drawing.Size(91, 23);
+            this.trip_submit.TabIndex = 4;
+            this.trip_submit.Text = "Submit";
+            this.trip_submit.UseVisualStyleBackColor = true;
+            this.trip_submit.Click += new System.EventHandler(this.trip_submit_Click);
             // 
             // Home
             // 
@@ -1085,6 +1265,10 @@ namespace MyTaxi
             this.panel6.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.Trip_details.ResumeLayout(false);
             this.TripDetails_panel.ResumeLayout(false);
@@ -1097,6 +1281,11 @@ namespace MyTaxi
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.Print_trip.ResumeLayout(false);
+            this.Print_trip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Trip_datagrid)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1182,5 +1371,19 @@ namespace MyTaxi
         private System.Windows.Forms.TextBox diesel_text_us;
         private System.Windows.Forms.Label delete_label;
         private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.TabPage Print_trip;
+        private System.Windows.Forms.DataGridView Trip_datagrid;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.DateTimePicker from_trip;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DateTimePicker to_trip;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button trip_submit;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.TextBox qty_text;
+        private System.Windows.Forms.Button print_button;
     }
 }
