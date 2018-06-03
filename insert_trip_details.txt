@@ -1,0 +1,52 @@
+
+
+CREATE PROCEDURE [dbo].[insert_trip_details] 
+	-- Add the parameters for the stored procedure here
+	@vehicle_number varchar(50),
+	@cost numeric(8),
+	@km numeric(8),
+	@company varchar(30),
+	@from_place varchar(30),
+	@to_place varchar(30),
+	@diesel_cost numeric(10) =0,
+	@diesel_cost_us numeric(10) =0,
+	@material varchar(15),
+	@qty numeric(15),
+	@driver varchar(20),
+	@remarks numeric(20,3) =0,
+	@date date,
+	@quality_in_feed varchar(20),
+	@advance numeric(18,3),
+	@advance_us numeric(18,0)
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+	
+
+    -- Insert statements for procedure here
+	insert into trip_details values(
+	@vehicle_number,
+	@cost,
+	@km,
+	@company,
+	@from_place,
+	@to_place,
+	@diesel_cost,
+	@diesel_cost_us,
+	@material,
+	@qty,
+	@driver,
+	@remarks,
+	@date,
+	@quality_in_feed,
+	@advance,
+	@advance_us)
+
+	update driver set pending_with_driver=pending_with_driver+@advance+@advance_us-@remarks where driver=@driver
+
+	update company set total=total-@advance-@diesel_cost where company=@company
+
+END

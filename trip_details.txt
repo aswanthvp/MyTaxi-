@@ -1,0 +1,21 @@
+
+
+CREATE TABLE [dbo].[trip_details](
+	[vehicle_number] [nvarchar](50) NOT NULL,
+	[cost_km] [numeric](18, 0) NOT NULL,
+	[km] [numeric](18, 0) NOT NULL,
+	[company] [nvarchar](50) NOT NULL,
+	[from_place] [nvarchar](50) NOT NULL,
+	[to_place] [nvarchar](50) NOT NULL,
+	[diesel_cost] [numeric](18, 0) NOT NULL,
+	[diesel_cost_us] [numeric](18, 0) NOT NULL,
+	[material] [varchar](18) NOT NULL,
+	[qty] [numeric](15, 0) NULL,
+	[driver] [nvarchar](50) NOT NULL,
+	[remarks] [numeric](18, 3) NOT NULL,
+	[date_new] [date] NOT NULL,
+	[quality_in_feed] [nvarchar](50) NOT NULL,
+	[advance] [numeric](18, 0) NULL,
+	[advance_us] [numeric](18, 0) NULL
+) ON [PRIMARY]
+

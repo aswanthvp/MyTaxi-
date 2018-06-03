@@ -1,0 +1,21 @@
+
+CREATE PROCEDURE  [dbo].[company_payment_details]
+	-- Add the parameters for the stored procedure here
+	@company varchar(50),
+	@payment_type varchar(50),
+	@amount numeric(18,0),
+	@date date
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	insert into company_payment values(
+	@company ,
+	@payment_type ,
+	@amount ,
+	@date 
+	)
+END

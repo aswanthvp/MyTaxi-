@@ -1,0 +1,26 @@
+
+CREATE PROCEDURE  [dbo].[trip_list_show]
+	-- Add the parameters for the stored procedure here
+	@from date,
+	@to date
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT 
+	Vehicle=[vehicle_number],
+	[cost_km] ,
+	[km],
+	[company],
+	From_place=[from_place],
+	To_place=[to_place] ,
+	convert(nvarchar(50),diesel_cost)+' -/- '+Convert(nvarchar(50),diesel_cost_us) as  Diesel,
+	[driver],
+	[remarks],
+	date=[date_new],
+	convert(nvarchar(50),advance)+' -/- '+Convert(nvarchar(50),advance_us) as  advance
+	from trip_details where date_new between @from and @to
+END

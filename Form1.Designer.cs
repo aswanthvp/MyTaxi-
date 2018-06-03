@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Top_panel = new System.Windows.Forms.Panel();
+            this.backup_button = new System.Windows.Forms.Button();
             this.MyTaxi = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.Button();
             this.Logo = new System.Windows.Forms.PictureBox();
@@ -43,13 +44,12 @@
             this.Vehicle_button = new System.Windows.Forms.Button();
             this.Driver = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.database1 = new MyTaxi.database();
             this.company1 = new MyTaxi.Company();
             this.home_new = new MyTaxi.Home();
             this.vehicle_new = new MyTaxi.vehicle();
             this.maintenance1 = new MyTaxi.Maintenance();
             this.driver1 = new MyTaxi.Driver();
-            this.backup_button = new System.Windows.Forms.Button();
-            this.database1 = new MyTaxi.database();
             this.Top_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.Left_panel.SuspendLayout();
@@ -72,6 +72,18 @@
             this.Top_panel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.Top_panel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             this.Top_panel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // backup_button
+            // 
+            this.backup_button.BackColor = System.Drawing.Color.Tan;
+            this.backup_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backup_button.Location = new System.Drawing.Point(844, 4);
+            this.backup_button.Name = "backup_button";
+            this.backup_button.Size = new System.Drawing.Size(64, 23);
+            this.backup_button.TabIndex = 2;
+            this.backup_button.Text = "Backup";
+            this.backup_button.UseVisualStyleBackColor = false;
+            this.backup_button.Click += new System.EventHandler(this.backup_button_Click);
             // 
             // MyTaxi
             // 
@@ -235,6 +247,15 @@
             this.panel5.Size = new System.Drawing.Size(866, 410);
             this.panel5.TabIndex = 4;
             // 
+            // database1
+            // 
+            this.database1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.database1.Location = new System.Drawing.Point(0, 0);
+            this.database1.Name = "database1";
+            this.database1.Size = new System.Drawing.Size(866, 410);
+            this.database1.TabIndex = 7;
+            this.database1.Visible = false;
+            // 
             // company1
             // 
             this.company1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -283,27 +304,6 @@
             this.driver1.TabIndex = 2;
             this.driver1.Visible = false;
             // 
-            // backup_button
-            // 
-            this.backup_button.BackColor = System.Drawing.Color.Tan;
-            this.backup_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backup_button.Location = new System.Drawing.Point(844, 4);
-            this.backup_button.Name = "backup_button";
-            this.backup_button.Size = new System.Drawing.Size(64, 23);
-            this.backup_button.TabIndex = 2;
-            this.backup_button.Text = "Backup";
-            this.backup_button.UseVisualStyleBackColor = false;
-            this.backup_button.Click += new System.EventHandler(this.backup_button_Click);
-            // 
-            // database1
-            // 
-            this.database1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.database1.Location = new System.Drawing.Point(0, 0);
-            this.database1.Name = "database1";
-            this.database1.Size = new System.Drawing.Size(866, 410);
-            this.database1.TabIndex = 7;
-            this.database1.Visible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -315,6 +315,7 @@
             this.Controls.Add(this.Break_panel);
             this.Controls.Add(this.Top_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.Top_panel.ResumeLayout(false);

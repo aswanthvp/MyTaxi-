@@ -12,5 +12,4 @@ C:\Users\Aswanth vp\source\repos\MyTaxi\obj\Debug\MyTaxi.Driver.resources
 C:\Users\Aswanth vp\source\repos\MyTaxi\obj\Debug\MyTaxi.Maintenance.resources
 C:\Users\Aswanth vp\source\repos\MyTaxi\bin\Debug\MyTaxi.exe.config
 C:\Users\Aswanth vp\source\repos\MyTaxi\obj\Debug\MyTaxi.company.resources
-C:\Users\Aswanth vp\source\repos\MyTaxi\obj\Debug\MyTaxi.csprojResolveAssemblyReference.cache
 C:\Users\Aswanth vp\source\repos\MyTaxi\obj\Debug\MyTaxi.database.resources

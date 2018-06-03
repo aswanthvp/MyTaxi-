@@ -1,0 +1,27 @@
+
+CREATE PROCEDURE [dbo].[update_vehicle]
+	-- Add the parameters for the stored procedure here
+	@vehicle_old varchar(15),
+	@vehicle_id varchar(15),
+	@date date,
+	@cost numeric(10),
+	@showroom_place varchar(15),
+	@showrrom_no numeric(15),
+	@showroom_mail varchar(25)  
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- alter statements for procedure here
+	update vehicle_details
+	set
+	vehicle_no=@vehicle_id,
+	cost=@cost,
+	date=@date,
+	showroom_place=@showroom_place,
+	showroom_mail=@showroom_mail,
+	showroom_no=@showrrom_no
+	where vehicle_no=@vehicle_old
+END

@@ -1,0 +1,11 @@
+
+CREATE TABLE [dbo].[driver](
+	[driver] [nvarchar](50) NOT NULL,
+	[pending_with_driver] [numeric](18, 0) NULL DEFAULT ((0)),
+	[payment] [numeric](18, 0) NULL DEFAULT ((0)),
+ CONSTRAINT [PK_driver] PRIMARY KEY CLUSTERED 
+(
+	[driver] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+

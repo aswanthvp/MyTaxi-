@@ -1,0 +1,15 @@
+
+CREATE PROCEDURE [dbo].[driver_trip] 
+	-- Add the parameters for the stored procedure here
+	@driver varchar(50),
+	@from varchar(50),
+	@to varchar(50)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT vehicle_number,from_place,to_place,date_new from trip_details where driver=@driver and date_new between @from and @to
+END

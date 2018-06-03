@@ -1,0 +1,16 @@
+
+
+CREATE PROCEDURE [dbo].[driver_pay] 
+	-- Add the parameters for the stored procedure here
+	@driver varchar(50),
+	@from date,
+	@to date
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT payment_type,date,amount from driver_payment_details where (driver=@driver) and (date between @from and @to)
+END

@@ -1,0 +1,27 @@
+
+CREATE PROCEDURE [dbo].[maintenance_update]
+	-- Add the parameters for the stored procedure here
+	@vehicle varchar(50),
+	@type varchar(50),
+	@date_new date,
+	@cost numeric(10),
+	@km numeric(10)=null,
+	
+	@vehicle_old varchar(50),
+	@type_old varchar(10),
+	@date_old date
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	update maintenance set 
+	vehicle=@vehicle,
+	type=@type,
+	cost=@cost,
+	km=@km,
+	date=@date_new
+	where vehicle=@vehicle_old and type=@type_old and date=@date_old
+END

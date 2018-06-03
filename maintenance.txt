@@ -1,0 +1,9 @@
+
+CREATE TABLE [dbo].[maintenance](
+	[vehicle] [nvarchar](18) NOT NULL,
+	[type] [nvarchar](50) NOT NULL,
+	[cost] [numeric](18, 0) NOT NULL,
+	[km] [numeric](18, 0) NULL,
+	[date] [date] NOT NULL
+) ON [PRIMARY]
+
