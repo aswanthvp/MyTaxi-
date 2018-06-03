@@ -1,0 +1,15 @@
+
+CREATE PROCEDURE [dbo].[driver_trip_pay] 
+	-- Add the parameters for the stored procedure here
+	@driver varchar(50),
+	@from date,
+	@to date
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT vehicle_number,from_place,to_place,date_new,amount=cost_km*km*.15,advance=advance+advance_us from trip_details where (driver=@driver) and (date_new between @from and @to)
+END

@@ -1,0 +1,25 @@
+
+
+CREATE PROCEDURE [dbo].[insert_maintanance_details] 
+	-- Add the parameters for the stored procedure here
+	@vehicle varchar(20),
+	@type varchar(20),
+	@cost numeric(8),
+	@km numeric(8)=null,
+	@date_add date
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	insert into maintenance values
+	(@vehicle,
+	@type,
+	@cost,
+	@km,
+	@date_add
+	)
+END

@@ -1,0 +1,13 @@
+
+CREATE PROCEDURE [dbo].[reduce_pending]
+	-- Add the parameters for the stored procedure here
+	@driver varchar(20)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	update driver set payment=payment-pending_with_driver,pending_with_driver=0 where driver=@driver
+END

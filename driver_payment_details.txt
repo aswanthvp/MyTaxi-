@@ -1,0 +1,21 @@
+
+
+CREATE PROCEDURE [dbo].[driver_payment_date] 
+	-- Add the parameters for the stored procedure here
+	@driver varchar(20),
+	@payment_type varchar(10),
+	@date date,
+	@amount numeric(10,0)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    insert into driver_payment_details values(
+	@driver,
+	@payment_type,
+	@date,
+	@amount)
+	
+END

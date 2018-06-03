@@ -1,0 +1,16 @@
+
+CREATE PROCEDURE [dbo].[vehicle_fetch_triptab] 
+	-- Add the parameters for the stored procedure here
+	@vehicle varchar(50),
+	@from_date date,
+	@to_date date
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT company,cost_km,km,company,from_place,to_place,diesel_cost=diesel_cost+diesel_cost_us,material,driver,remarks,date_new,quality_in_feed from trip_details where (vehicle_number=@vehicle) AND (date_new  between @from_date AND @to_date)
+	
+END

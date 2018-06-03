@@ -1,0 +1,19 @@
+
+CREATE PROCEDURE add_company 
+	-- Add the parameters for the stored procedure here
+	@company varchar(50),
+	@contact numeric(15),
+	@email varchar(50)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	insert into company (company,contact,email) values(
+	@company,
+	@contact,
+	@email)
+END
+

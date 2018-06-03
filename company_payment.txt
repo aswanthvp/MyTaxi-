@@ -1,0 +1,10 @@
+
+
+CREATE TABLE [dbo].[company_payment](
+	[company] [nchar](30) NOT NULL,
+	[payment_type] [varchar](30) NOT NULL,
+	[amount] [numeric](18, 0) NOT NULL,
+	[date] [date] NOT NULL
+) ON [PRIMARY]
+
+

@@ -54,9 +54,9 @@ namespace MyTaxi
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show( ex.Message);
             }
             finally
             {
@@ -111,9 +111,9 @@ namespace MyTaxi
                 MessageBox.Show("Details updated");
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show(ex.Message); 
             }
             finally
             {
@@ -158,9 +158,9 @@ namespace MyTaxi
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured in loading the vehicle list");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -188,9 +188,9 @@ namespace MyTaxi
                     contact_text.Text = reader["contact"].ToString();
                 }                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -239,9 +239,9 @@ namespace MyTaxi
                 MessageBox.Show("Details uploaded");
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -281,10 +281,10 @@ namespace MyTaxi
             
 
              }
-             catch (Exception)
+             catch (Exception ex)
              {
-                 MessageBox.Show("Error occured");
-             }
+                MessageBox.Show(ex.Message);
+            }
              finally
              {
                  conn.Close();

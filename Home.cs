@@ -49,9 +49,9 @@ namespace MyTaxi
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured in loading the vehicle list");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -109,9 +109,9 @@ namespace MyTaxi
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -155,9 +155,9 @@ namespace MyTaxi
              
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured in loading the vehicle list");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -223,9 +223,9 @@ namespace MyTaxi
    
                 MessageBox.Show("Trip details updated");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -268,9 +268,9 @@ namespace MyTaxi
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured in loading the vehicle list");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -302,9 +302,9 @@ namespace MyTaxi
 
 
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -350,9 +350,9 @@ namespace MyTaxi
                         pending_info_text.Text = Convert.ToString( reader_new["pending_with_driver"]);
                     }
                 }
-            }catch(Exception)
+            }catch(Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -380,9 +380,9 @@ namespace MyTaxi
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured in loading the vehicle list");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -420,9 +420,9 @@ namespace MyTaxi
                
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -472,9 +472,9 @@ namespace MyTaxi
                 }
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show(ex.Message);
             }
             finally
             {

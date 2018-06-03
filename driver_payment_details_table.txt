@@ -1,0 +1,10 @@
+
+
+CREATE TABLE [dbo].[driver_payment_details](
+	[driver] [nchar](20) NOT NULL,
+	[payment_type] [nchar](10) NOT NULL,
+	[date] [date] NOT NULL,
+	[amount] [numeric](18, 0) NOT NULL
+) ON [PRIMARY]
+
+

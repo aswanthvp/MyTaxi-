@@ -35,7 +35,9 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -76,6 +78,12 @@
     </Compile>
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Installer1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Installer1.Designer.cs">
+      <DependentUpon>Installer1.cs</DependentUpon>
     </Compile>
     <Compile Include="Maintenance.cs">
       <SubType>UserControl</SubType>
@@ -134,6 +142,50 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="add_company.txt" />
+    <EmbeddedResource Include="add_driver.txt" />
+    <EmbeddedResource Include="COMPANY.txt" />
+    <EmbeddedResource Include="company_cash_details.txt" />
+    <EmbeddedResource Include="company_list_show.txt" />
+    <EmbeddedResource Include="company_pay.txt" />
+    <EmbeddedResource Include="company_payment.txt" />
+    <EmbeddedResource Include="company_payment_details.txt" />
+    <EmbeddedResource Include="company_payment_update_trigger.txt" />
+    <EmbeddedResource Include="company_trip.txt" />
+    <EmbeddedResource Include="delete_maintenance.txt" />
+    <EmbeddedResource Include="delete_res_triggert.txt" />
+    <EmbeddedResource Include="driver.txt" />
+    <EmbeddedResource Include="driver_cash_details.txt" />
+    <EmbeddedResource Include="driver_list_show.txt" />
+    <EmbeddedResource Include="driver_pay.txt" />
+    <EmbeddedResource Include="driver_payment_details.txt" />
+    <EmbeddedResource Include="driver_payment_details_table.txt" />
+    <EmbeddedResource Include="driver_trip.txt" />
+    <EmbeddedResource Include="driver_trip_pay.txt" />
+    <EmbeddedResource Include="insert_maintanance_details.txt" />
+    <EmbeddedResource Include="insert_trip_details.txt" />
+    <EmbeddedResource Include="insert_vehicle.txt" />
+    <EmbeddedResource Include="insert_vehicle_last_trip_trigger.txt" />
+    <EmbeddedResource Include="maintanence_search.txt" />
+    <EmbeddedResource Include="maintenance.txt" />
+    <EmbeddedResource Include="maintenance_update.txt" />
+    <EmbeddedResource Include="pending_driver.txt" />
+    <EmbeddedResource Include="reduce_pending.txt" />
+    <EmbeddedResource Include="total_overview.txt" />
+    <EmbeddedResource Include="trip_delete_details.txt" />
+    <EmbeddedResource Include="trip_details.txt" />
+    <EmbeddedResource Include="trip_list_view.txt" />
+    <EmbeddedResource Include="update_company.txt" />
+    <EmbeddedResource Include="update_driver_money.txt" />
+    <EmbeddedResource Include="update_vehicle.txt" />
+    <EmbeddedResource Include="vehicle_details.txt" />
+    <EmbeddedResource Include="vehicle_details_return.txt" />
+    <EmbeddedResource Include="vehicle_fetch_triptab.txt" />
+    <EmbeddedResource Include="vehicle_last_trip.txt" />
+    <EmbeddedResource Include="vehicle_list_show.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

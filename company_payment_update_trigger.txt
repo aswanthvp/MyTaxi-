@@ -1,0 +1,17 @@
+
+CREATE TRIGGER [dbo].[company_payment_update_trigger]
+       ON [dbo].[company_payment]
+AFTER INSERT,UPDATE 
+AS
+ DECLARE @company varchar(50),		 
+		@amount varchar(50)
+ 
+       SELECT @company = INSERTED.company ,@amount= INSERTED.amount
+       FROM INSERTED
+
+BEGIN
+       SET NOCOUNT ON;
+ 
+      update company set total=total-@amount where company=@company
+       
+END

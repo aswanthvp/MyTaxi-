@@ -63,9 +63,9 @@ namespace MyTaxi
 
                 }
             }
-            catch(Exception)
+            catch(Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -108,9 +108,9 @@ namespace MyTaxi
                     MessageBox.Show("data restoration done successefully");
 
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error occured");
+                    MessageBox.Show(ex.Message);
                 }
                 finally
                 {

@@ -1,0 +1,14 @@
+
+CREATE PROCEDURE [dbo].[maintenance_search]
+	-- Add the parameters for the stored procedure here
+	@from_date date,
+	@to_date date
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT * from maintenance where date between @from_date and @to_date order by date asc
+END

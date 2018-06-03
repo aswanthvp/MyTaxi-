@@ -1,0 +1,15 @@
+
+create PROCEDURE [dbo].[update_driver_money]
+	-- Add the parameters for the stored procedure here
+	@driver varchar(50),
+	@amount numeric(10,0)
+	
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	update driver set payment=payment-@amount where driver=@driver
+END

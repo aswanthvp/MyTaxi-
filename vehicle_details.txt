@@ -1,0 +1,17 @@
+
+
+CREATE TABLE [dbo].[vehicle_details](
+	[vehicle_no] [nvarchar](50) NOT NULL,
+	[cost] [numeric](18, 0) NOT NULL,
+	[date] [date] NOT NULL,
+	[showroom_place] [varchar](18) NOT NULL,
+	[showroom_no] [numeric](18, 0) NOT NULL,
+	[showroom_mail] [varchar](50) NOT NULL,
+	[from_place] [nvarchar](50) NULL,
+	[to_place] [nvarchar](50) NULL,
+	[driver] [nvarchar](50) NULL,
+ CONSTRAINT [PK_vehicle_details] PRIMARY KEY CLUSTERED 
+(
+	[vehicle_no] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]

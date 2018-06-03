@@ -1,0 +1,14 @@
+
+CREATE PROCEDURE [dbo].[total_overview]
+	-- Add the parameters for the stored procedure here
+	@from date,
+	@to date
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	SELECT total_company=SUM(cost_km*km),diesel=SUM(diesel_cost),remark=SUM(remarks) from trip_details where date_new between @from and @to
+END

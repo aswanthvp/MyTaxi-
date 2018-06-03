@@ -1,0 +1,15 @@
+
+CREATE PROCEDURE [dbo].[update_company]
+	-- Add the parameters for the stored procedure here
+	@company varchar(50),
+	@email varchar(50),
+	@contact numeric(18)
+AS
+BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;
+
+    -- Insert statements for procedure here
+	update company set email=@email,contact=@contact where company=@company
+END

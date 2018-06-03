@@ -40,9 +40,9 @@ namespace MyTaxi
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured in loading the vehicle list");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -100,9 +100,9 @@ namespace MyTaxi
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Details uploaded");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -156,9 +156,9 @@ namespace MyTaxi
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -229,9 +229,9 @@ namespace MyTaxi
                     Populatelist();
                     MessageBox.Show("Deleted");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error occured");
+                    MessageBox.Show(ex.Message);
                 }
                 finally
                 {
@@ -271,9 +271,9 @@ namespace MyTaxi
                 Populatelist();
                 MessageBox.Show("Updated successfully");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
