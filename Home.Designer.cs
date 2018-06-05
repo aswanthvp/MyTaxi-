@@ -32,6 +32,7 @@ namespace MyTaxi
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.Home_tab = new System.Windows.Forms.TabControl();
+            this.DoubleBuffered = true;
             this.Trip = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();

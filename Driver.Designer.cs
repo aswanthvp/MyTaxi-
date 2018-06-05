@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Driver));
             this.Driver_tab = new System.Windows.Forms.TabControl();
+            this.DoubleBuffered = true;
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
             this.driver_trip_list = new System.Windows.Forms.ListView();

@@ -12,7 +12,7 @@ CREATE TABLE [dbo].[trip_details](
 	[material] [varchar](18) NOT NULL,
 	[qty] [numeric](15, 0) NULL,
 	[driver] [nvarchar](50) NOT NULL,
-	[remarks] [numeric](18, 3) NOT NULL,
+	[remarks] [numeric](18, 0) NOT NULL,
 	[date_new] [date] NOT NULL,
 	[quality_in_feed] [nvarchar](50) NOT NULL,
 	[advance] [numeric](18, 0) NULL,

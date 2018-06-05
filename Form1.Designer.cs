@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Top_panel = new System.Windows.Forms.Panel();
+            this.DoubleBuffered = true;
             this.backup_button = new System.Windows.Forms.Button();
             this.MyTaxi = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.Button();

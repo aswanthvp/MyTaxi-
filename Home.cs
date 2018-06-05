@@ -172,8 +172,8 @@ namespace MyTaxi
             conn.ConnectionString = "Data Source=(local)\\SQLEXPRESS;Initial Catalog=MyTaxi;Integrated Security=True";
 
            
-             try
-             {
+             //try
+            // {
                 if (Diesel_text.Text == "")
                     Diesel_text.Text = "0";
                 if (diesel_text_us.Text == "")
@@ -222,7 +222,7 @@ namespace MyTaxi
 
    
                 MessageBox.Show("Trip details updated");
-            }
+           /* }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -230,7 +230,7 @@ namespace MyTaxi
             finally
             {
                 conn.Close();
-            }
+            }*/
         }
 
        

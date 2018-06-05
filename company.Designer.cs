@@ -827,6 +827,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Company_tablayout);
+            this.DoubleBuffered = true;
             this.Name = "Company";
             this.Size = new System.Drawing.Size(840, 343);
             this.Company_tablayout.ResumeLayout(false);

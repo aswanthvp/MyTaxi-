@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Maintenance));
             this.Maintenance_tab = new System.Windows.Forms.TabControl();
+            this.DoubleBuffered = true;
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Table_maintenance = new System.Windows.Forms.TableLayoutPanel();
             this.Vehicle_label = new System.Windows.Forms.Label();

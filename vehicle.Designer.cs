@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(vehicle));
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.DoubleBuffered = true;
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.edit_panel = new System.Windows.Forms.Panel();
             this.Edit_button = new System.Windows.Forms.Button();

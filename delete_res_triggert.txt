@@ -3,14 +3,14 @@ CREATE TRIGGER [dbo].[delete_rest]
        ON [dbo].[trip_details]
 AFTER delete
 AS
- DECLARE @advance numeric(18,3),
-		 @advance_us numeric(18,3),
-		 @remarks numeric(18,3),
-		 @diesel_cost numeric(18,3),
+ DECLARE @advance numeric(18,0),
+		 @advance_us numeric(18,0),
+		 @remarks numeric(18,0),
+		 @diesel_cost numeric(18,0),
 		@driver varchar(50),
 		@company varchar(50),
-		@km numeric(18,3),
-		@cost numeric(5,3)
+		@km numeric(18,0),
+		@cost numeric(5,0)
  
        SELECT @km=km,@cost=cost_km, @company=company,@driver=driver,@advance=advance, @advance_us=advance_us,@remarks=remarks,@diesel_cost=diesel_cost
        FROM deleted

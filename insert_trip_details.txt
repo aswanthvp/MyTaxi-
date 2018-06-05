@@ -13,10 +13,10 @@ CREATE PROCEDURE [dbo].[insert_trip_details]
 	@material varchar(15),
 	@qty numeric(15),
 	@driver varchar(20),
-	@remarks numeric(20,3) =0,
+	@remarks numeric(20) =0,
 	@date date,
 	@quality_in_feed varchar(20),
-	@advance numeric(18,3),
+	@advance numeric(18),
 	@advance_us numeric(18,0)
 	
 AS

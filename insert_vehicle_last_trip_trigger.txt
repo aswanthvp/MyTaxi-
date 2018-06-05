@@ -8,8 +8,8 @@ AS
  	    @to_place varchar(50),
 		@driver varchar(50),
 		@company varchar(50),
-		@km numeric(18,3),
-		@cost numeric(5,3)
+		@km numeric(18,0),
+		@cost numeric(5,0)
  
        SELECT @km=inserted.km,@cost=inserted.cost_km, @company=inserted.company,@from_place = INSERTED.from_place ,@to_place= INSERTED.to_place , @vehicle_number=INSERTED.vehicle_number,@driver=inserted.driver
        FROM INSERTED
