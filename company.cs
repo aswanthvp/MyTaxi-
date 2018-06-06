@@ -7,17 +7,43 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using System.Runtime.InteropServices;
 
 namespace MyTaxi
 {
     public partial class Company : UserControl
     {
+
+        internal static class NativeWinAPI
+        {
+            internal static readonly int GWL_EXSTYLE = -20;
+            internal static readonly int WS_EX_COMPOSITED = 0x02000000;
+
+            [DllImport("user32")]
+            internal static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+            [DllImport("user32")]
+            internal static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+        }
+
         public Company()
         {
             InitializeComponent();
+            Graphicload();
             Load_company();
         }
+
+        public void Graphicload()
+        {
+            int style = NativeWinAPI.GetWindowLong(Company_add.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(Company_add.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            int style1 = NativeWinAPI.GetWindowLong(Company_tab.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style1 |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(Company_tab.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+        }
+
 
         private void Submit_driver_Click(object sender, EventArgs e)
         {

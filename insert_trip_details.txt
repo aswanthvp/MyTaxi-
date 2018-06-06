@@ -15,7 +15,6 @@ CREATE PROCEDURE [dbo].[insert_trip_details]
 	@driver varchar(20),
 	@remarks numeric(20) =0,
 	@date date,
-	@quality_in_feed varchar(20),
 	@advance numeric(18),
 	@advance_us numeric(18,0)
 	
@@ -41,7 +40,6 @@ BEGIN
 	@driver,
 	@remarks,
 	@date,
-	@quality_in_feed,
 	@advance,
 	@advance_us)
 

@@ -11,6 +11,6 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	SELECT company,cost_km,km,company,from_place,to_place,diesel_cost=diesel_cost+diesel_cost_us,material,driver,remarks,date_new,quality_in_feed from trip_details where (vehicle_number=@vehicle) AND (date_new  between @from_date AND @to_date)
+	SELECT company,cost_km,km,company,from_place,to_place,diesel_cost=diesel_cost+diesel_cost_us,material,driver,remarks,date_new from trip_details where (vehicle_number=@vehicle) AND (date_new  between @from_date AND @to_date)
 	
 END

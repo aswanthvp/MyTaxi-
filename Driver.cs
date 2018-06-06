@@ -7,18 +7,45 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace MyTaxi
 {
     public partial class Driver : UserControl
     {
+
+        internal static class NativeWinAPI
+        {
+            internal static readonly int GWL_EXSTYLE = -20;
+            internal static readonly int WS_EX_COMPOSITED = 0x02000000;
+
+            [DllImport("user32")]
+            internal static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+            [DllImport("user32")]
+            internal static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+        }
+
+
         public Driver()
         {
             InitializeComponent();
+            Graphicload();
             Load_driver();
         }
 
-        public void Load_driver()
+        public void Graphicload()
+        {
+            int style = NativeWinAPI.GetWindowLong(tabPage2.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(tabPage2.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            int style1 = NativeWinAPI.GetWindowLong(Driver_add.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style1 |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(Driver_add.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+        }
+
+            public void Load_driver()
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = "Data Source=(local)\\SQLEXPRESS;Initial Catalog=MyTaxi;Integrated Security=True";

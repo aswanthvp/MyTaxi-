@@ -32,11 +32,9 @@ namespace MyTaxi
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.Home_tab = new System.Windows.Forms.TabControl();
-            this.DoubleBuffered = true;
             this.Trip = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.Quality_in_feeds_label = new System.Windows.Forms.Label();
             this.vehicle_label = new System.Windows.Forms.Label();
             this.Pending_label = new System.Windows.Forms.Label();
             this.From_label = new System.Windows.Forms.Label();
@@ -57,7 +55,6 @@ namespace MyTaxi
             this.company_label = new System.Windows.Forms.Label();
             this.pending_info_text = new System.Windows.Forms.Label();
             this.driver_droplist = new System.Windows.Forms.ComboBox();
-            this.Quality_in_feeds_text = new System.Windows.Forms.TextBox();
             this.company_text = new System.Windows.Forms.ComboBox();
             this.date_pick = new System.Windows.Forms.DateTimePicker();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -193,7 +190,6 @@ namespace MyTaxi
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.78873F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.01408F));
-            this.tableLayoutPanel1.Controls.Add(this.Quality_in_feeds_label, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.vehicle_label, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.Pending_label, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.From_label, 2, 0);
@@ -211,16 +207,15 @@ namespace MyTaxi
             this.tableLayoutPanel1.Controls.Add(this.Diesel, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.Advance_label, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.dropdown_vehicle_trip, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.company_label, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.pending_info_text, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.driver_droplist, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.Quality_in_feeds_text, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.company_text, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.date_pick, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 5, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.company_label, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.company_text, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -232,19 +227,6 @@ namespace MyTaxi
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(852, 296);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // Quality_in_feeds_label
-            // 
-            this.Quality_in_feeds_label.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Quality_in_feeds_label.AutoSize = true;
-            this.Quality_in_feeds_label.BackColor = System.Drawing.Color.Transparent;
-            this.Quality_in_feeds_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Quality_in_feeds_label.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.Quality_in_feeds_label.Location = new System.Drawing.Point(44, 259);
-            this.Quality_in_feeds_label.Name = "Quality_in_feeds_label";
-            this.Quality_in_feeds_label.Size = new System.Drawing.Size(95, 13);
-            this.Quality_in_feeds_label.TabIndex = 28;
-            this.Quality_in_feeds_label.Text = "Quality in feeds";
             // 
             // vehicle_label
             // 
@@ -354,7 +336,7 @@ namespace MyTaxi
             this.Remarks_text.Location = new System.Drawing.Point(692, 196);
             this.Remarks_text.Name = "Remarks_text";
             this.Remarks_text.Size = new System.Drawing.Size(82, 20);
-            this.Remarks_text.TabIndex = 13;
+            this.Remarks_text.TabIndex = 17;
             // 
             // Cost_text
             // 
@@ -450,7 +432,7 @@ namespace MyTaxi
             this.company_label.BackColor = System.Drawing.Color.Transparent;
             this.company_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.company_label.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.company_label.Location = new System.Drawing.Point(360, 259);
+            this.company_label.Location = new System.Drawing.Point(81, 259);
             this.company_label.Name = "company_label";
             this.company_label.Size = new System.Drawing.Size(58, 13);
             this.company_label.TabIndex = 30;
@@ -479,14 +461,6 @@ namespace MyTaxi
             this.driver_droplist.TabIndex = 7;
             this.driver_droplist.SelectedIndexChanged += new System.EventHandler(this.driver_droplist_SelectedIndexChanged);
             // 
-            // Quality_in_feeds_text
-            // 
-            this.Quality_in_feeds_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Quality_in_feeds_text.Location = new System.Drawing.Point(145, 256);
-            this.Quality_in_feeds_text.Name = "Quality_in_feeds_text";
-            this.Quality_in_feeds_text.Size = new System.Drawing.Size(83, 20);
-            this.Quality_in_feeds_text.TabIndex = 14;
-            // 
             // company_text
             // 
             this.company_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -495,11 +469,11 @@ namespace MyTaxi
             this.company_text.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.company_text.FormattingEnabled = true;
             this.company_text.ItemHeight = 13;
-            this.company_text.Location = new System.Drawing.Point(424, 255);
+            this.company_text.Location = new System.Drawing.Point(145, 255);
             this.company_text.MaxDropDownItems = 100;
             this.company_text.Name = "company_text";
             this.company_text.Size = new System.Drawing.Size(83, 21);
-            this.company_text.TabIndex = 15;
+            this.company_text.TabIndex = 18;
             // 
             // date_pick
             // 
@@ -536,7 +510,7 @@ namespace MyTaxi
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(157, 53);
-            this.tableLayoutPanel2.TabIndex = 0;
+            this.tableLayoutPanel2.TabIndex = 8;
             // 
             // label3
             // 
@@ -569,14 +543,14 @@ namespace MyTaxi
             this.Advance_text_company.Location = new System.Drawing.Point(3, 3);
             this.Advance_text_company.Name = "Advance_text_company";
             this.Advance_text_company.Size = new System.Drawing.Size(81, 20);
-            this.Advance_text_company.TabIndex = 8;
+            this.Advance_text_company.TabIndex = 9;
             // 
             // Advance_text_US
             // 
             this.Advance_text_US.Location = new System.Drawing.Point(3, 29);
             this.Advance_text_US.Name = "Advance_text_US";
             this.Advance_text_US.Size = new System.Drawing.Size(81, 20);
-            this.Advance_text_US.TabIndex = 9;
+            this.Advance_text_US.TabIndex = 10;
             // 
             // panel6
             // 
@@ -604,7 +578,7 @@ namespace MyTaxi
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(143, 53);
-            this.tableLayoutPanel3.TabIndex = 0;
+            this.tableLayoutPanel3.TabIndex = 11;
             // 
             // label15
             // 
@@ -638,7 +612,7 @@ namespace MyTaxi
             this.diesel_text_us.Location = new System.Drawing.Point(3, 29);
             this.diesel_text_us.Name = "diesel_text_us";
             this.diesel_text_us.Size = new System.Drawing.Size(75, 20);
-            this.diesel_text_us.TabIndex = 11;
+            this.diesel_text_us.TabIndex = 13;
             // 
             // Diesel_text
             // 
@@ -646,7 +620,7 @@ namespace MyTaxi
             this.Diesel_text.Location = new System.Drawing.Point(3, 3);
             this.Diesel_text.Name = "Diesel_text";
             this.Diesel_text.Size = new System.Drawing.Size(75, 20);
-            this.Diesel_text.TabIndex = 10;
+            this.Diesel_text.TabIndex = 12;
             // 
             // panel7
             // 
@@ -694,7 +668,7 @@ namespace MyTaxi
             this.flowLayoutPanel1.Location = new System.Drawing.Point(424, 180);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(136, 53);
-            this.flowLayoutPanel1.TabIndex = 39;
+            this.flowLayoutPanel1.TabIndex = 14;
             // 
             // Material_text
             // 
@@ -702,7 +676,7 @@ namespace MyTaxi
             this.Material_text.Location = new System.Drawing.Point(3, 3);
             this.Material_text.Name = "Material_text";
             this.Material_text.Size = new System.Drawing.Size(83, 20);
-            this.Material_text.TabIndex = 12;
+            this.Material_text.TabIndex = 15;
             // 
             // qty_text
             // 
@@ -710,7 +684,7 @@ namespace MyTaxi
             this.qty_text.Location = new System.Drawing.Point(3, 29);
             this.qty_text.Name = "qty_text";
             this.qty_text.Size = new System.Drawing.Size(83, 20);
-            this.qty_text.TabIndex = 17;
+            this.qty_text.TabIndex = 16;
             // 
             // panel1
             // 
@@ -1253,6 +1227,7 @@ namespace MyTaxi
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.Home_tab);
+            this.DoubleBuffered = true;
             this.Name = "Home";
             this.Size = new System.Drawing.Size(866, 406);
             this.Home_tab.ResumeLayout(false);
@@ -1329,8 +1304,6 @@ namespace MyTaxi
         private System.Windows.Forms.Label Advance_label;
         private System.Windows.Forms.ComboBox dropdown_vehicle_trip;
         private System.Windows.Forms.ComboBox dropdown_vehicle_details;
-        private System.Windows.Forms.Label Quality_in_feeds_label;
-        private System.Windows.Forms.TextBox Quality_in_feeds_text;
         private System.Windows.Forms.Label company_label;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker to_date;

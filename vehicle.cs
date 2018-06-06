@@ -8,19 +8,44 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
-
+using System.Runtime.InteropServices;
 
 namespace MyTaxi
 {
     public partial class vehicle : UserControl
     {
+
+        internal static class NativeWinAPI
+        {
+            internal static readonly int GWL_EXSTYLE = -20;
+            internal static readonly int WS_EX_COMPOSITED = 0x02000000;
+
+            [DllImport("user32")]
+            internal static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+            [DllImport("user32")]
+            internal static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+        }
+
         //string myconnstrng = ConfigurationManager.ConnectionStrings["Data Source=(local)\SQLEXPRESS;Initial Catalog=MyTaxi;Integrated Security=True"].ConnectionString;
         string vehicle_temp = null;//to access the database to make the updation
         public vehicle()
         {
             InitializeComponent();
+            Graphicload();
             Listbox_Display();
 
+        }
+
+        public void Graphicload()
+        {
+            int style = NativeWinAPI.GetWindowLong(tabPage2.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(tabPage2.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            int style1 = NativeWinAPI.GetWindowLong(tabPage1.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style1 |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(tabPage1.Handle, NativeWinAPI.GWL_EXSTYLE, style);
         }
 
         //to populate the listbox

@@ -10,21 +10,57 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Runtime.Remoting.Contexts;
 using DGVPrinterHelper;
+using System.Runtime.InteropServices;
 
 namespace MyTaxi
 {
+
+
     public partial class Home : UserControl
     {
-        
+
+        internal static class NativeWinAPI
+        {
+            internal static readonly int GWL_EXSTYLE = -20;
+            internal static readonly int WS_EX_COMPOSITED = 0x02000000;
+
+            [DllImport("user32")]
+            internal static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+            [DllImport("user32")]
+            internal static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+        }
+
+
         string company, cost, km, dat,vehicle,from,to;
         public Home()
         {
             InitializeComponent();
+            Graphicload();
             Load_vehicle();
             Listcoloum_load();
             Load_driver();
             Load_company();
            
+        }
+
+        public void Graphicload()
+        {
+            int style = NativeWinAPI.GetWindowLong(Total.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(Total.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            int style1 = NativeWinAPI.GetWindowLong(panel1.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style1 |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(panel1.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            int style2 = NativeWinAPI.GetWindowLong(panel2.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style2 |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(panel2.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+
+
+
         }
 
         //To load the vehicle list into the droplist
@@ -104,7 +140,6 @@ namespace MyTaxi
                     listitem.SubItems.Add(dr["driver"].ToString());
                     listitem.SubItems.Add(dr["remarks"].ToString());
                     listitem.SubItems.Add(Convert.ToDateTime(dr["date_new"]).ToString("d/MM/yyyy"));
-                    listitem.SubItems.Add(dr["quality_in_feed"].ToString());
                     vehicle_listview.Items.Add(listitem);
                 }
 
@@ -172,8 +207,8 @@ namespace MyTaxi
             conn.ConnectionString = "Data Source=(local)\\SQLEXPRESS;Initial Catalog=MyTaxi;Integrated Security=True";
 
            
-             //try
-            // {
+             try
+             {
                 if (Diesel_text.Text == "")
                     Diesel_text.Text = "0";
                 if (diesel_text_us.Text == "")
@@ -201,7 +236,6 @@ namespace MyTaxi
                 cmd.Parameters.AddWithValue("@driver",driver_droplist.Text.Trim());
                 cmd.Parameters.AddWithValue("@remarks", Convert.ToInt32( Remarks_text.Text.Trim()));
                 cmd.Parameters.AddWithValue("@date", Convert.ToDateTime(date_pick.Text.Trim()));
-                cmd.Parameters.AddWithValue("@quality_in_feed",  Quality_in_feeds_text.Text.Trim());
                 cmd.Parameters.AddWithValue("@advance", Convert.ToInt32(Advance_text_company.Text.Trim()));
                 cmd.Parameters.AddWithValue("@advance_us", Convert.ToInt32(Advance_text_US.Text.Trim()));
                 cmd.ExecuteNonQuery();
@@ -212,8 +246,7 @@ namespace MyTaxi
                 Cost_text.Clear();
                 KM_text.Clear();
                 Remarks_text.Clear();
-                date_pick.ResetText();
-                Quality_in_feeds_text.Clear();
+                date_pick.ResetText();           
                 Diesel_text.Clear();
                 Material_text.Clear();
                 Advance_text_company.Clear();
@@ -222,7 +255,7 @@ namespace MyTaxi
 
    
                 MessageBox.Show("Trip details updated");
-           /* }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -230,7 +263,7 @@ namespace MyTaxi
             finally
             {
                 conn.Close();
-            }*/
+            }
         }
 
        
@@ -246,7 +279,6 @@ namespace MyTaxi
             vehicle_listview.Columns.Add("Driver");
             vehicle_listview.Columns.Add("Remarks");
             vehicle_listview.Columns.Add("Date");
-            vehicle_listview.Columns.Add("Quality");
         }
 
         public void Load_driver()

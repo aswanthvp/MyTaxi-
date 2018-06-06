@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Maintenance));
             this.Maintenance_tab = new System.Windows.Forms.TabControl();
-            this.DoubleBuffered = true;
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Table_maintenance = new System.Windows.Forms.TableLayoutPanel();
             this.Vehicle_label = new System.Windows.Forms.Label();
@@ -138,14 +137,14 @@
             this.Table_maintenance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.Table_maintenance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.Table_maintenance.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.Table_maintenance.Size = new System.Drawing.Size(624, 391);
+            this.Table_maintenance.Size = new System.Drawing.Size(624, 383);
             this.Table_maintenance.TabIndex = 0;
             // 
             // Vehicle_label
             // 
             this.Vehicle_label.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Vehicle_label.AutoSize = true;
-            this.Vehicle_label.Location = new System.Drawing.Point(90, 31);
+            this.Vehicle_label.Location = new System.Drawing.Point(90, 30);
             this.Vehicle_label.Name = "Vehicle_label";
             this.Vehicle_label.Size = new System.Drawing.Size(47, 15);
             this.Vehicle_label.TabIndex = 0;
@@ -155,7 +154,7 @@
             // 
             this.Date_label.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Date_label.AutoSize = true;
-            this.Date_label.Location = new System.Drawing.Point(446, 31);
+            this.Date_label.Location = new System.Drawing.Point(446, 30);
             this.Date_label.Name = "Date_label";
             this.Date_label.Size = new System.Drawing.Size(33, 15);
             this.Date_label.TabIndex = 1;
@@ -165,7 +164,7 @@
             // 
             this.date_pick.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.date_pick.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.date_pick.Location = new System.Drawing.Point(485, 28);
+            this.date_pick.Location = new System.Drawing.Point(485, 27);
             this.date_pick.Name = "date_pick";
             this.date_pick.Size = new System.Drawing.Size(122, 21);
             this.date_pick.TabIndex = 2;
@@ -174,7 +173,7 @@
             // 
             this.Type_label.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Type_label.AutoSize = true;
-            this.Type_label.Location = new System.Drawing.Point(33, 109);
+            this.Type_label.Location = new System.Drawing.Point(33, 106);
             this.Type_label.Name = "Type_label";
             this.Type_label.Size = new System.Drawing.Size(104, 15);
             this.Type_label.TabIndex = 4;
@@ -189,7 +188,7 @@
             "Workshop",
             "Service",
             "GPS"});
-            this.Type_combobox.Location = new System.Drawing.Point(143, 106);
+            this.Type_combobox.Location = new System.Drawing.Point(143, 102);
             this.Type_combobox.Name = "Type_combobox";
             this.Type_combobox.Size = new System.Drawing.Size(121, 23);
             this.Type_combobox.TabIndex = 3;
@@ -200,7 +199,7 @@
             // 
             this.Cost_label.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.Cost_label.AutoSize = true;
-            this.Cost_label.Location = new System.Drawing.Point(106, 187);
+            this.Cost_label.Location = new System.Drawing.Point(106, 182);
             this.Cost_label.Name = "Cost_label";
             this.Cost_label.Size = new System.Drawing.Size(31, 15);
             this.Cost_label.TabIndex = 6;
@@ -209,7 +208,7 @@
             // Cost_text
             // 
             this.Cost_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Cost_text.Location = new System.Drawing.Point(143, 184);
+            this.Cost_text.Location = new System.Drawing.Point(143, 179);
             this.Cost_text.Name = "Cost_text";
             this.Cost_text.Size = new System.Drawing.Size(121, 21);
             this.Cost_text.TabIndex = 5;
@@ -218,7 +217,7 @@
             // 
             this.KM_label.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.KM_label.AutoSize = true;
-            this.KM_label.Location = new System.Drawing.Point(453, 109);
+            this.KM_label.Location = new System.Drawing.Point(453, 106);
             this.KM_label.Name = "KM_label";
             this.KM_label.Size = new System.Drawing.Size(26, 15);
             this.KM_label.TabIndex = 8;
@@ -228,7 +227,7 @@
             // KM_text
             // 
             this.KM_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.KM_text.Location = new System.Drawing.Point(485, 106);
+            this.KM_text.Location = new System.Drawing.Point(485, 103);
             this.KM_text.Name = "KM_text";
             this.KM_text.Size = new System.Drawing.Size(122, 21);
             this.KM_text.TabIndex = 4;
@@ -237,7 +236,7 @@
             // Submit_maintenance
             // 
             this.Submit_maintenance.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Submit_maintenance.Location = new System.Drawing.Point(172, 261);
+            this.Submit_maintenance.Location = new System.Drawing.Point(172, 254);
             this.Submit_maintenance.Name = "Submit_maintenance";
             this.Submit_maintenance.Size = new System.Drawing.Size(75, 23);
             this.Submit_maintenance.TabIndex = 6;
@@ -250,7 +249,7 @@
             this.dropdown_vehicle_list_maintenance.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dropdown_vehicle_list_maintenance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdown_vehicle_list_maintenance.FormattingEnabled = true;
-            this.dropdown_vehicle_list_maintenance.Location = new System.Drawing.Point(143, 28);
+            this.dropdown_vehicle_list_maintenance.Location = new System.Drawing.Point(143, 26);
             this.dropdown_vehicle_list_maintenance.MaxDropDownItems = 100;
             this.dropdown_vehicle_list_maintenance.Name = "dropdown_vehicle_list_maintenance";
             this.dropdown_vehicle_list_maintenance.Size = new System.Drawing.Size(121, 23);
@@ -614,6 +613,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.Maintenance_tab);
+            this.DoubleBuffered = true;
             this.Name = "Maintenance";
             this.Size = new System.Drawing.Size(866, 423);
             this.Maintenance_tab.ResumeLayout(false);

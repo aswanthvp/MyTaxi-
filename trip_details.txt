@@ -14,7 +14,6 @@ CREATE TABLE [dbo].[trip_details](
 	[driver] [nvarchar](50) NOT NULL,
 	[remarks] [numeric](18, 0) NOT NULL,
 	[date_new] [date] NOT NULL,
-	[quality_in_feed] [nvarchar](50) NOT NULL,
 	[advance] [numeric](18, 0) NULL,
 	[advance_us] [numeric](18, 0) NULL
 ) ON [PRIMARY]

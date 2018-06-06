@@ -7,18 +7,46 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
+using System.Runtime.InteropServices;
 
 namespace MyTaxi
 {
     public partial class Maintenance : UserControl
     {
+
+        internal static class NativeWinAPI
+        {
+            internal static readonly int GWL_EXSTYLE = -20;
+            internal static readonly int WS_EX_COMPOSITED = 0x02000000;
+
+            [DllImport("user32")]
+            internal static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+            [DllImport("user32")]
+            internal static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+        }
+
+
         public string vehicle, type, date, from_date_temp , to_date_temp;
         public Maintenance()
         {
             InitializeComponent();
+            Graphicload();
             Load_vehicle();
         }
+
+
+        public void Graphicload()
+        {
+            int style = NativeWinAPI.GetWindowLong(tabPage2.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(tabPage2.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            int style1 = NativeWinAPI.GetWindowLong(tabPage1.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style1 |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(tabPage1.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+        }
+
 
         //Toload the lit of vehicles into the dropdown list
         public void Load_vehicle()

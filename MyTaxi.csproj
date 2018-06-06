@@ -30,6 +30,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>tempo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -143,7 +146,11 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="te.ico" />
+    <Content Include="tem.ico" />
+    <Content Include="tempo.ico" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="add_company.txt" />
     <EmbeddedResource Include="add_driver.txt" />
