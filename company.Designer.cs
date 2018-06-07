@@ -209,6 +209,7 @@
             this.contact_text.ReadOnly = true;
             this.contact_text.Size = new System.Drawing.Size(175, 20);
             this.contact_text.TabIndex = 5;
+            this.contact_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Read_KeyPress_ex);
             // 
             // contact_label
             // 
@@ -452,6 +453,7 @@
             this.amount.Name = "amount";
             this.amount.Size = new System.Drawing.Size(64, 20);
             this.amount.TabIndex = 4;
+            this.amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Read_KeyPress);
             // 
             // payment_submit
             // 
@@ -813,6 +815,7 @@
             this.contact_text_add.Name = "contact_text_add";
             this.contact_text_add.Size = new System.Drawing.Size(64, 20);
             this.contact_text_add.TabIndex = 2;
+            this.contact_text_add.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Read_KeyPress_ex);
             // 
             // email_text_add
             // 

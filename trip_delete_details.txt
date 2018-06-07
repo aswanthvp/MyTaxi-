@@ -4,7 +4,9 @@ CREATE PROCEDURE [dbo].[trip_delete_details]
 	@company varchar(50),
 	@cost numeric(18),
 	@km numeric(18),
-	@date date
+	@date date,
+	@diesel numeric(18),
+	@advance numeric(18)
 AS
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -12,5 +14,5 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	delete from trip_details where company=@company and cost_km=@cost and km=@km and date_new=@date
+	delete from trip_details where company=@company and cost_km=@cost and km=@km and date_new=@date and advance=@advance and diesel_cost=@diesel
 END

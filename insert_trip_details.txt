@@ -16,7 +16,8 @@ CREATE PROCEDURE [dbo].[insert_trip_details]
 	@remarks numeric(20) =0,
 	@date date,
 	@advance numeric(18),
-	@advance_us numeric(18,0)
+	@advance_us numeric(18,0),
+	@remarks_us numeric(18,0)
 	
 AS
 BEGIN
@@ -41,9 +42,10 @@ BEGIN
 	@remarks,
 	@date,
 	@advance,
-	@advance_us)
+	@advance_us,
+	@remarks_us)
 
-	update driver set pending_with_driver=pending_with_driver+@advance+@advance_us-@remarks where driver=@driver
+	update driver set pending_with_driver=pending_with_driver+@advance+@advance_us-@remarks-@remarks_us where driver=@driver
 
 	update company set total=total-@advance-@diesel_cost where company=@company
 

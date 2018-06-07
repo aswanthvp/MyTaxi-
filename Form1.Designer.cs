@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Top_panel = new System.Windows.Forms.Panel();
-            this.DoubleBuffered = true;
             this.backup_button = new System.Windows.Forms.Button();
             this.MyTaxi = new System.Windows.Forms.Label();
             this.Exit = new System.Windows.Forms.Button();
@@ -256,6 +255,7 @@
             this.database1.Size = new System.Drawing.Size(866, 410);
             this.database1.TabIndex = 7;
             this.database1.Visible = false;
+            this.database1.Load += new System.EventHandler(this.database1_Load);
             // 
             // company1
             // 
@@ -315,6 +315,7 @@
             this.Controls.Add(this.Bottom_panel);
             this.Controls.Add(this.Break_panel);
             this.Controls.Add(this.Top_panel);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";

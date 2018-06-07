@@ -188,7 +188,7 @@
             "Workshop",
             "Service",
             "GPS"});
-            this.Type_combobox.Location = new System.Drawing.Point(143, 102);
+            this.Type_combobox.Location = new System.Drawing.Point(143, 103);
             this.Type_combobox.Name = "Type_combobox";
             this.Type_combobox.Size = new System.Drawing.Size(121, 23);
             this.Type_combobox.TabIndex = 3;
@@ -212,6 +212,7 @@
             this.Cost_text.Name = "Cost_text";
             this.Cost_text.Size = new System.Drawing.Size(121, 21);
             this.Cost_text.TabIndex = 5;
+            this.Cost_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Read_KeyPress);
             // 
             // KM_label
             // 
@@ -232,6 +233,7 @@
             this.KM_text.Size = new System.Drawing.Size(122, 21);
             this.KM_text.TabIndex = 4;
             this.KM_text.Visible = false;
+            this.KM_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Read_KeyPress);
             // 
             // Submit_maintenance
             // 
@@ -249,7 +251,7 @@
             this.dropdown_vehicle_list_maintenance.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dropdown_vehicle_list_maintenance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdown_vehicle_list_maintenance.FormattingEnabled = true;
-            this.dropdown_vehicle_list_maintenance.Location = new System.Drawing.Point(143, 26);
+            this.dropdown_vehicle_list_maintenance.Location = new System.Drawing.Point(143, 27);
             this.dropdown_vehicle_list_maintenance.MaxDropDownItems = 100;
             this.dropdown_vehicle_list_maintenance.Name = "dropdown_vehicle_list_maintenance";
             this.dropdown_vehicle_list_maintenance.Size = new System.Drawing.Size(121, 23);

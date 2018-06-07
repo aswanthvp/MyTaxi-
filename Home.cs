@@ -32,7 +32,7 @@ namespace MyTaxi
         }
 
 
-        string company, cost, km, dat,vehicle,from,to;
+        string company, cost, km, dat,vehicle,from,to,adv,die;
         public Home()
         {
             InitializeComponent();
@@ -43,6 +43,23 @@ namespace MyTaxi
             Load_company();
            
         }
+
+
+        private void Read_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
 
         public void Graphicload()
         {
@@ -57,9 +74,6 @@ namespace MyTaxi
             int style2 = NativeWinAPI.GetWindowLong(panel2.Handle, NativeWinAPI.GWL_EXSTYLE);
             style2 |= NativeWinAPI.WS_EX_COMPOSITED;
             NativeWinAPI.SetWindowLong(panel2.Handle, NativeWinAPI.GWL_EXSTYLE, style);
-
-
-
 
         }
 
@@ -140,6 +154,8 @@ namespace MyTaxi
                     listitem.SubItems.Add(dr["driver"].ToString());
                     listitem.SubItems.Add(dr["remarks"].ToString());
                     listitem.SubItems.Add(Convert.ToDateTime(dr["date_new"]).ToString("d/MM/yyyy"));
+                    listitem.SubItems.Add(dr["advance"].ToString());
+                    listitem.SubItems.Add(dr["diesel_cost"].ToString());
                     vehicle_listview.Items.Add(listitem);
                 }
 
@@ -219,6 +235,8 @@ namespace MyTaxi
                     Advance_text_US.Text = "0";
                 if (qty_text.Text == "")
                     qty_text.Text = "0";
+                if (remarks_us.Text == "")
+                    remarks_us.Text = "0";
 
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("insert_trip_details", conn);
@@ -238,6 +256,7 @@ namespace MyTaxi
                 cmd.Parameters.AddWithValue("@date", Convert.ToDateTime(date_pick.Text.Trim()));
                 cmd.Parameters.AddWithValue("@advance", Convert.ToInt32(Advance_text_company.Text.Trim()));
                 cmd.Parameters.AddWithValue("@advance_us", Convert.ToInt32(Advance_text_US.Text.Trim()));
+                cmd.Parameters.AddWithValue("@remarks_us", Convert.ToInt32(remarks_us.Text.Trim()));
                 cmd.ExecuteNonQuery();
                
 
@@ -279,6 +298,8 @@ namespace MyTaxi
             vehicle_listview.Columns.Add("Driver");
             vehicle_listview.Columns.Add("Remarks");
             vehicle_listview.Columns.Add("Date");
+            vehicle_listview.Columns.Add("Advance");
+            vehicle_listview.Columns.Add("Diesel");
         }
 
         public void Load_driver()
@@ -441,14 +462,16 @@ namespace MyTaxi
                         int driver_money = Convert.ToInt32(total_company_temp*.15);
                         int remarks_temp = Convert.ToInt32(reader_new["remark"]);
                         int diesel_temp= Convert.ToInt32(reader_new["diesel"]);
+                        int remarks_us = Convert.ToInt32(reader_new["remark_us"]);
 
-                        int total_profit = total_company_temp - driver_money - remarks_temp - diesel_temp;
+                        int total_profit = total_company_temp - driver_money - remarks_us - diesel_temp;
 
-                        company_money.Text= Convert.ToString(total_company_temp);
+                        company_money.Text= Convert.ToString(total_company_temp+remarks_temp);
                         Driver_money.Text = Convert.ToString(driver_money);
                         petrol_money.Text = Convert.ToString(diesel_temp);
                         Fine_money.Text = Convert.ToString(remarks_temp);
                         Profit_money.Text = Convert.ToString(total_profit);
+                        Extra_cost.Text = Convert.ToString(remarks_us);
                
                 }
             }
@@ -473,6 +496,8 @@ namespace MyTaxi
                 cost = vehicle_listview.SelectedItems[0].SubItems[1].Text;
                 km =vehicle_listview.SelectedItems[0].SubItems[2].Text;
                 dat = vehicle_listview.SelectedItems[0].SubItems[9].Text;
+                adv= vehicle_listview.SelectedItems[0].SubItems[10].Text;
+                die = vehicle_listview.SelectedItems[0].SubItems[11].Text;
             }
             else
             {
@@ -497,6 +522,8 @@ namespace MyTaxi
                     cmd_new.Parameters.AddWithValue("@cost", Convert.ToInt32(cost));
                     cmd_new.Parameters.AddWithValue("@km", Convert.ToInt32(km));
                     cmd_new.Parameters.AddWithValue("@date", Convert.ToDateTime(dat));
+                    cmd_new.Parameters.AddWithValue("@advance", Convert.ToInt32(adv));
+                    cmd_new.Parameters.AddWithValue("@diesel", Convert.ToInt32(die));
                     cmd_new.ExecuteNonQuery();
                     vehicle_fetch_listview_fill();
                     MessageBox.Show("Trip details deleted");

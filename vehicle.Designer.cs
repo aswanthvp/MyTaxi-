@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(vehicle));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.DoubleBuffered = true;
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.edit_panel = new System.Windows.Forms.Panel();
             this.Edit_button = new System.Windows.Forms.Button();
@@ -198,6 +197,7 @@
             this.showroom_no_text_edit.ReadOnly = true;
             this.showroom_no_text_edit.Size = new System.Drawing.Size(139, 16);
             this.showroom_no_text_edit.TabIndex = 5;
+            this.showroom_no_text_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Read_KeyPress_ex);
             // 
             // cost_text_edit
             // 
@@ -210,6 +210,7 @@
             this.cost_text_edit.ReadOnly = true;
             this.cost_text_edit.Size = new System.Drawing.Size(139, 16);
             this.cost_text_edit.TabIndex = 3;
+            this.cost_text_edit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Read_KeyPress);
             // 
             // label8
             // 
@@ -499,6 +500,7 @@
             this.Cost_text.Name = "Cost_text";
             this.Cost_text.Size = new System.Drawing.Size(100, 20);
             this.Cost_text.TabIndex = 3;
+            this.Cost_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Read_KeyPress);
             // 
             // Number_text
             // 
@@ -508,6 +510,7 @@
             this.Number_text.Name = "Number_text";
             this.Number_text.Size = new System.Drawing.Size(100, 20);
             this.Number_text.TabIndex = 5;
+            this.Number_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Read_KeyPress_ex);
             // 
             // Mail_text
             // 
@@ -535,6 +538,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.tabControl1);
+            this.DoubleBuffered = true;
             this.Name = "vehicle";
             this.Size = new System.Drawing.Size(651, 440);
             this.tabControl1.ResumeLayout(false);

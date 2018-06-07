@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -11,17 +12,50 @@ namespace MyTaxi
 {
     public partial class Form1 : Form
     {
+
+        internal static class NativeWinAPI
+        {
+            internal static readonly int GWL_EXSTYLE = -20;
+            internal static readonly int WS_EX_COMPOSITED = 0x02000000;
+
+            [DllImport("user32")]
+            internal static extern int GetWindowLong(IntPtr hWnd, int nIndex);
+
+            [DllImport("user32")]
+            internal static extern int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong);
+        }
+
+
         bool flag = false;
         public int xx, yy;
 
         public Form1()
         {
             InitializeComponent();
+            Graphicload();
         }
 
-       
+        public void Graphicload()
+        {
+            int style = NativeWinAPI.GetWindowLong(Top_panel.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(Top_panel.Handle, NativeWinAPI.GWL_EXSTYLE, style);
 
-       
+            int style1 = NativeWinAPI.GetWindowLong(Left_panel.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style1 |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(Left_panel.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            int style2 = NativeWinAPI.GetWindowLong(Break_panel.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style2 |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(Break_panel.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+            int style3 = NativeWinAPI.GetWindowLong(panel5.Handle, NativeWinAPI.GWL_EXSTYLE);
+            style3 |= NativeWinAPI.WS_EX_COMPOSITED;
+            NativeWinAPI.SetWindowLong(panel5.Handle, NativeWinAPI.GWL_EXSTYLE, style);
+
+        }
+
+
 
         private void Home_Click_1(object sender, EventArgs e)
         {
@@ -112,7 +146,10 @@ namespace MyTaxi
             flag = false;
         }
 
-        
+        private void database1_Load(object sender, EventArgs e)
+        {
+
+        }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
