@@ -10,5 +10,5 @@ BEGIN
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
-	SELECT total_company=SUM(cost_km*km),diesel=SUM(diesel_cost),remark=SUM(remarks),remark_us=sum(remarks_us) from trip_details where date_new between @from and @to
+	SELECT total_company=SUM(cost_km*km),diesel=SUM(diesel_cost),remark=SUM(remarks) from trip_details where date_new between @from and @to
 END

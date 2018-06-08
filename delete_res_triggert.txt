@@ -10,18 +10,17 @@ AS
 		@driver varchar(50),
 		@company varchar(50),
 		@km numeric(18,0),
-		@cost numeric(5,0),
-		@remarks_us numeric(18,0)
+		@cost numeric(5,0)
  
-       SELECT @km=km,@cost=cost_km, @company=company,@driver=driver,@advance=advance, @advance_us=advance_us,@remarks=remarks,@diesel_cost=diesel_cost,@remarks_us=remarks_us
+       SELECT @km=km,@cost=cost_km, @company=company,@driver=driver,@advance=advance, @advance_us=advance_us,@remarks=remarks,@diesel_cost=diesel_cost
        FROM deleted
 
 BEGIN
        SET NOCOUNT ON;
  
-     update driver set pending_with_driver=pending_with_driver-@advance-@advance_us+@remarks+@remarks_us where driver=@driver
+     update driver set pending_with_driver=pending_with_driver-@advance-@advance_us+@remarks where driver=@driver
 	 update company set total=total+@advance+@diesel_cost where company=@company
-	 update company set total=total-(@km*@cost) where company=@company
+	 update company set total=total-(@km*@cost)-@remarks where company=@company
 	 update driver set payment=payment-(@km*@cost*.15) where driver=@driver
  
        

@@ -15,7 +15,6 @@ CREATE TABLE [dbo].[trip_details](
 	[remarks] [numeric](18, 0) NOT NULL,
 	[date_new] [date] NOT NULL,
 	[advance] [numeric](18, 0) NULL,
-	[advance_us] [numeric](18, 0) NULL,
-	[remarks_us] [numeric](18,0) NULL
+	[advance_us] [numeric](18, 0) NULL
 ) ON [PRIMARY]
 

@@ -74,10 +74,6 @@ namespace MyTaxi
             this.qty_text = new System.Windows.Forms.TextBox();
             this.company_label = new System.Windows.Forms.Label();
             this.company_text = new System.Windows.Forms.ComboBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.remarks_us = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.Remarks_text = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Submit_button = new System.Windows.Forms.Button();
@@ -97,8 +93,6 @@ namespace MyTaxi
             this.Submit1_button = new System.Windows.Forms.Button();
             this.Total = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.Extra_cost = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
             this.Fine_money = new System.Windows.Forms.Label();
             this.petrol_money = new System.Windows.Forms.Label();
             this.company_money = new System.Windows.Forms.Label();
@@ -138,7 +132,6 @@ namespace MyTaxi
             this.tableLayoutPanel3.SuspendLayout();
             this.panel7.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.panel8.SuspendLayout();
             this.panel1.SuspendLayout();
             this.Trip_details.SuspendLayout();
             this.TripDetails_panel.SuspendLayout();
@@ -197,6 +190,7 @@ namespace MyTaxi
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.78873F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.01408F));
+            this.tableLayoutPanel1.Controls.Add(this.Remarks_text, 5, 3);
             this.tableLayoutPanel1.Controls.Add(this.vehicle_label, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.Pending_label, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.From_label, 2, 0);
@@ -222,7 +216,6 @@ namespace MyTaxi
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.company_label, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.company_text, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.panel8, 5, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -692,56 +685,10 @@ namespace MyTaxi
             this.company_text.Size = new System.Drawing.Size(83, 21);
             this.company_text.TabIndex = 18;
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.Controls.Add(this.remarks_us);
-            this.panel8.Controls.Add(this.label21);
-            this.panel8.Controls.Add(this.label20);
-            this.panel8.Controls.Add(this.Remarks_text);
-            this.panel8.Location = new System.Drawing.Point(692, 180);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(157, 53);
-            this.panel8.TabIndex = 39;
-            // 
-            // remarks_us
-            // 
-            this.remarks_us.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.remarks_us.Location = new System.Drawing.Point(3, 29);
-            this.remarks_us.Name = "remarks_us";
-            this.remarks_us.Size = new System.Drawing.Size(82, 20);
-            this.remarks_us.TabIndex = 40;
-            // 
-            // label21
-            // 
-            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.Transparent;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label21.Location = new System.Drawing.Point(91, 33);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(50, 13);
-            this.label21.TabIndex = 23;
-            this.label21.Text = "( from us)";
-            // 
-            // label20
-            // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label20.AutoSize = true;
-            this.label20.BackColor = System.Drawing.Color.Transparent;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.label20.Location = new System.Drawing.Point(90, 10);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(56, 13);
-            this.label20.TabIndex = 22;
-            this.label20.Text = "(company)";
-            // 
             // Remarks_text
             // 
             this.Remarks_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Remarks_text.Location = new System.Drawing.Point(3, 6);
+            this.Remarks_text.Location = new System.Drawing.Point(692, 196);
             this.Remarks_text.Name = "Remarks_text";
             this.Remarks_text.Size = new System.Drawing.Size(82, 20);
             this.Remarks_text.TabIndex = 17;
@@ -953,8 +900,6 @@ namespace MyTaxi
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.Extra_cost);
-            this.panel5.Controls.Add(this.label22);
             this.panel5.Controls.Add(this.Fine_money);
             this.panel5.Controls.Add(this.petrol_money);
             this.panel5.Controls.Add(this.company_money);
@@ -970,26 +915,6 @@ namespace MyTaxi
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(402, 238);
             this.panel5.TabIndex = 3;
-            // 
-            // Extra_cost
-            // 
-            this.Extra_cost.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.Extra_cost.BackColor = System.Drawing.Color.Silver;
-            this.Extra_cost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Extra_cost.Location = new System.Drawing.Point(85, 134);
-            this.Extra_cost.Name = "Extra_cost";
-            this.Extra_cost.Size = new System.Drawing.Size(69, 20);
-            this.Extra_cost.TabIndex = 19;
-            // 
-            // label22
-            // 
-            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(23, 141);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(54, 13);
-            this.label22.TabIndex = 18;
-            this.label22.Text = "Extra cost";
             // 
             // Fine_money
             // 
@@ -1331,8 +1256,6 @@ namespace MyTaxi
             this.panel7.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.Trip_details.ResumeLayout(false);
             this.TripDetails_panel.ResumeLayout(false);
@@ -1447,11 +1370,5 @@ namespace MyTaxi
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TextBox qty_text;
         private System.Windows.Forms.Button print_button;
-        private System.Windows.Forms.TextBox remarks_us;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label Extra_cost;
-        private System.Windows.Forms.Label label22;
     }
 }

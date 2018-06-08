@@ -235,8 +235,6 @@ namespace MyTaxi
                     Advance_text_US.Text = "0";
                 if (qty_text.Text == "")
                     qty_text.Text = "0";
-                if (remarks_us.Text == "")
-                    remarks_us.Text = "0";
 
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("insert_trip_details", conn);
@@ -256,7 +254,6 @@ namespace MyTaxi
                 cmd.Parameters.AddWithValue("@date", Convert.ToDateTime(date_pick.Text.Trim()));
                 cmd.Parameters.AddWithValue("@advance", Convert.ToInt32(Advance_text_company.Text.Trim()));
                 cmd.Parameters.AddWithValue("@advance_us", Convert.ToInt32(Advance_text_US.Text.Trim()));
-                cmd.Parameters.AddWithValue("@remarks_us", Convert.ToInt32(remarks_us.Text.Trim()));
                 cmd.ExecuteNonQuery();
                
 
@@ -461,17 +458,16 @@ namespace MyTaxi
                         int total_company_temp = Convert.ToInt32(reader_new["total_company"]);
                         int driver_money = Convert.ToInt32(total_company_temp*.15);
                         int remarks_temp = Convert.ToInt32(reader_new["remark"]);
-                        int diesel_temp= Convert.ToInt32(reader_new["diesel"]);
-                        int remarks_us = Convert.ToInt32(reader_new["remark_us"]);
+                        int diesel_temp= Convert.ToInt32(reader_new["diesel"]);                   
 
-                        int total_profit = total_company_temp - driver_money - remarks_us - diesel_temp;
+                        int total_profit = total_company_temp - driver_money - diesel_temp;
 
                         company_money.Text= Convert.ToString(total_company_temp+remarks_temp);
                         Driver_money.Text = Convert.ToString(driver_money);
                         petrol_money.Text = Convert.ToString(diesel_temp);
                         Fine_money.Text = Convert.ToString(remarks_temp);
                         Profit_money.Text = Convert.ToString(total_profit);
-                        Extra_cost.Text = Convert.ToString(remarks_us);
+    
                
                 }
             }
