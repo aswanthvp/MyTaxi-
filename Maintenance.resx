@@ -112,12 +112,12 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="tabPage1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEBLAEsAAD/4QDgRXhpZgAATU0AKgAAAAgABAEPAAIAAAAFAAAAPgEQAAIAAAAK
@@ -292,6 +292,18 @@
         ruHJCANBoZJCC08HIckIKYcjJIQFGDQySEBTGSGiEFGDQNt7EIaD/TLnb5MWVshC2ENMmVsxZqe5CF8u
         fyfGbIzNkbIQrHPWemLohB0oBi6IQCn9F0AQhmU+5RCCnimQhDChRCAMohCGZRRCGZT7kIQzKZRCGBCE
         IYEKIQ0ZCEIFkIQhmQhCGZ//2Q==
+</value>
+  </data>
+  <data name="bunifuGradientPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFYSURBVChTDcrZVlJRHMDh/QZe2IVeWMthqS3LJlSQQURA
+        BERiUAZBFBHNLK3V6qkKOJxz9j4y9Gi//t/1p2ZS/3hxPGW+MOFVZcxKY8TrK4/NrsH3oAn8cIn8dlCz
+        ySlzmQkv82OWT0es15952zJ86mj89y7hR4fYLxs1F5+ycDRhOSepJKnq8bFp8Lc14TuX2DeHw59D1EJs
+        wtLhmLWspIKkM8POuSZ0Kakr6atN9slCLUbHrCZGvEl7fMgbtsuaYM1l/8Ih2bHJfBmS/z5ArUZGbBw8
+        8z4lKSep6BKtOCQaktqSbi3KD33URkjSvsdW0hDMaqKfXRKnNum6pEtJNwNq9xLf7Xr49gy7cc1e2iV+
+        4nBUGnJStShdDKhe92ne9VA+vyEQ1kRiklKSjm1yBYvimaSGpKse7e5fVGDbEAlqDqKSkpIyQ4p5i0p5
+        QLPep93qcdv5w396uuO7LeKa/AAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="panel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

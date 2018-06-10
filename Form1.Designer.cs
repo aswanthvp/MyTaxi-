@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Top_panel = new System.Windows.Forms.Panel();
             this.backup_button = new System.Windows.Forms.Button();
@@ -50,6 +52,8 @@
             this.vehicle_new = new MyTaxi.vehicle();
             this.maintenance1 = new MyTaxi.Maintenance();
             this.driver1 = new MyTaxi.Driver();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.bunifuTransition1 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.Top_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.Left_panel.SuspendLayout();
@@ -64,6 +68,7 @@
             this.Top_panel.Controls.Add(this.MyTaxi);
             this.Top_panel.Controls.Add(this.Exit);
             this.Top_panel.Controls.Add(this.Logo);
+            this.bunifuTransition1.SetDecoration(this.Top_panel, BunifuAnimatorNS.DecorationType.None);
             this.Top_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Top_panel.Location = new System.Drawing.Point(0, 0);
             this.Top_panel.Name = "Top_panel";
@@ -76,6 +81,7 @@
             // backup_button
             // 
             this.backup_button.BackColor = System.Drawing.Color.Tan;
+            this.bunifuTransition1.SetDecoration(this.backup_button, BunifuAnimatorNS.DecorationType.None);
             this.backup_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backup_button.Location = new System.Drawing.Point(844, 4);
             this.backup_button.Name = "backup_button";
@@ -88,6 +94,7 @@
             // MyTaxi
             // 
             this.MyTaxi.AutoEllipsis = true;
+            this.bunifuTransition1.SetDecoration(this.MyTaxi, BunifuAnimatorNS.DecorationType.None);
             this.MyTaxi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MyTaxi.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.MyTaxi.Location = new System.Drawing.Point(94, 0);
@@ -99,6 +106,7 @@
             // 
             // Exit
             // 
+            this.bunifuTransition1.SetDecoration(this.Exit, BunifuAnimatorNS.DecorationType.None);
             this.Exit.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
             this.Exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,6 +122,7 @@
             // 
             // Logo
             // 
+            this.bunifuTransition1.SetDecoration(this.Logo, BunifuAnimatorNS.DecorationType.None);
             this.Logo.ErrorImage = ((System.Drawing.Image)(resources.GetObject("Logo.ErrorImage")));
             this.Logo.Image = ((System.Drawing.Image)(resources.GetObject("Logo.Image")));
             this.Logo.Location = new System.Drawing.Point(0, 0);
@@ -126,6 +135,7 @@
             // Break_panel
             // 
             this.Break_panel.BackColor = System.Drawing.Color.OldLace;
+            this.bunifuTransition1.SetDecoration(this.Break_panel, BunifuAnimatorNS.DecorationType.None);
             this.Break_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.Break_panel.Location = new System.Drawing.Point(0, 34);
             this.Break_panel.Name = "Break_panel";
@@ -135,6 +145,7 @@
             // Bottom_panel
             // 
             this.Bottom_panel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.bunifuTransition1.SetDecoration(this.Bottom_panel, BunifuAnimatorNS.DecorationType.None);
             this.Bottom_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Bottom_panel.Location = new System.Drawing.Point(0, 454);
             this.Bottom_panel.Name = "Bottom_panel";
@@ -146,6 +157,7 @@
             this.Left_panel.BackColor = System.Drawing.SystemColors.HotTrack;
             this.Left_panel.Controls.Add(this.tableLayoutPanel1);
             this.Left_panel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.bunifuTransition1.SetDecoration(this.Left_panel, BunifuAnimatorNS.DecorationType.None);
             this.Left_panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.Left_panel.Location = new System.Drawing.Point(0, 44);
             this.Left_panel.Name = "Left_panel";
@@ -161,6 +173,7 @@
             this.tableLayoutPanel1.Controls.Add(this.Maintenance, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.Vehicle_button, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.Driver, 0, 3);
+            this.bunifuTransition1.SetDecoration(this.tableLayoutPanel1, BunifuAnimatorNS.DecorationType.None);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -176,6 +189,7 @@
             // 
             // Company
             // 
+            this.bunifuTransition1.SetDecoration(this.Company, BunifuAnimatorNS.DecorationType.None);
             this.Company.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Company.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
             this.Company.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -188,6 +202,7 @@
             // 
             // Home
             // 
+            this.bunifuTransition1.SetDecoration(this.Home, BunifuAnimatorNS.DecorationType.None);
             this.Home.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Home.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
             this.Home.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -200,6 +215,7 @@
             // 
             // Maintenance
             // 
+            this.bunifuTransition1.SetDecoration(this.Maintenance, BunifuAnimatorNS.DecorationType.None);
             this.Maintenance.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
             this.Maintenance.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Maintenance.Location = new System.Drawing.Point(3, 85);
@@ -212,6 +228,7 @@
             // Vehicle_button
             // 
             this.Vehicle_button.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.bunifuTransition1.SetDecoration(this.Vehicle_button, BunifuAnimatorNS.DecorationType.None);
             this.Vehicle_button.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
             this.Vehicle_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Vehicle_button.Location = new System.Drawing.Point(3, 167);
@@ -224,6 +241,7 @@
             // 
             // Driver
             // 
+            this.bunifuTransition1.SetDecoration(this.Driver, BunifuAnimatorNS.DecorationType.None);
             this.Driver.FlatAppearance.BorderColor = System.Drawing.SystemColors.HotTrack;
             this.Driver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Driver.Location = new System.Drawing.Point(3, 249);
@@ -241,6 +259,7 @@
             this.panel5.Controls.Add(this.vehicle_new);
             this.panel5.Controls.Add(this.maintenance1);
             this.panel5.Controls.Add(this.driver1);
+            this.bunifuTransition1.SetDecoration(this.panel5, BunifuAnimatorNS.DecorationType.None);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(134, 44);
             this.panel5.Name = "panel5";
@@ -249,6 +268,7 @@
             // 
             // database1
             // 
+            this.bunifuTransition1.SetDecoration(this.database1, BunifuAnimatorNS.DecorationType.None);
             this.database1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.database1.Location = new System.Drawing.Point(0, 0);
             this.database1.Name = "database1";
@@ -259,6 +279,7 @@
             // 
             // company1
             // 
+            this.bunifuTransition1.SetDecoration(this.company1, BunifuAnimatorNS.DecorationType.None);
             this.company1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.company1.Location = new System.Drawing.Point(0, 0);
             this.company1.Name = "company1";
@@ -269,6 +290,7 @@
             // home_new
             // 
             this.home_new.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("home_new.BackgroundImage")));
+            this.bunifuTransition1.SetDecoration(this.home_new, BunifuAnimatorNS.DecorationType.None);
             this.home_new.Dock = System.Windows.Forms.DockStyle.Fill;
             this.home_new.Location = new System.Drawing.Point(0, 0);
             this.home_new.Name = "home_new";
@@ -278,6 +300,7 @@
             // vehicle_new
             // 
             this.vehicle_new.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vehicle_new.BackgroundImage")));
+            this.bunifuTransition1.SetDecoration(this.vehicle_new, BunifuAnimatorNS.DecorationType.None);
             this.vehicle_new.Dock = System.Windows.Forms.DockStyle.Fill;
             this.vehicle_new.Location = new System.Drawing.Point(0, 0);
             this.vehicle_new.Name = "vehicle_new";
@@ -288,6 +311,7 @@
             // maintenance1
             // 
             this.maintenance1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("maintenance1.BackgroundImage")));
+            this.bunifuTransition1.SetDecoration(this.maintenance1, BunifuAnimatorNS.DecorationType.None);
             this.maintenance1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.maintenance1.Location = new System.Drawing.Point(0, 0);
             this.maintenance1.Name = "maintenance1";
@@ -298,12 +322,39 @@
             // driver1
             // 
             this.driver1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("driver1.BackgroundImage")));
+            this.bunifuTransition1.SetDecoration(this.driver1, BunifuAnimatorNS.DecorationType.None);
             this.driver1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.driver1.Location = new System.Drawing.Point(0, 0);
             this.driver1.Name = "driver1";
             this.driver1.Size = new System.Drawing.Size(866, 410);
             this.driver1.TabIndex = 2;
             this.driver1.Visible = false;
+            // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 20;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // bunifuTransition1
+            // 
+            this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Transparent;
+            this.bunifuTransition1.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 0.7F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 1F;
+            this.bunifuTransition1.DefaultAnimation = animation1;
             // 
             // Form1
             // 
@@ -315,6 +366,7 @@
             this.Controls.Add(this.Bottom_panel);
             this.Controls.Add(this.Break_panel);
             this.Controls.Add(this.Top_panel);
+            this.bunifuTransition1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -352,6 +404,8 @@
         private Company company1;
         private System.Windows.Forms.Button backup_button;
         private database database1;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private BunifuAnimatorNS.BunifuTransition bunifuTransition1;
     }
 }
 

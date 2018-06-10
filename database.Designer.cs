@@ -28,60 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(database));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.backup_location = new System.Windows.Forms.TextBox();
-            this.Browse = new System.Windows.Forms.Button();
             this.backup = new System.Windows.Forms.Button();
+            this.Browse = new System.Windows.Forms.Button();
+            this.backup_location = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Restore = new System.Windows.Forms.Button();
             this.Browse_restore = new System.Windows.Forms.Button();
             this.restore_location = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.backup);
             this.groupBox1.Controls.Add(this.Browse);
             this.groupBox1.Controls.Add(this.backup_location);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(23, 39);
+            this.groupBox1.Location = new System.Drawing.Point(17, 199);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(690, 120);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Data Backup";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 42);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Location";
-            // 
-            // backup_location
-            // 
-            this.backup_location.Location = new System.Drawing.Point(97, 39);
-            this.backup_location.Name = "backup_location";
-            this.backup_location.ReadOnly = true;
-            this.backup_location.Size = new System.Drawing.Size(220, 20);
-            this.backup_location.TabIndex = 1;
-            this.backup_location.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // Browse
-            // 
-            this.Browse.Location = new System.Drawing.Point(359, 37);
-            this.Browse.Name = "Browse";
-            this.Browse.Size = new System.Drawing.Size(75, 23);
-            this.Browse.TabIndex = 2;
-            this.Browse.Text = "Browse";
-            this.Browse.UseVisualStyleBackColor = true;
-            this.Browse.Click += new System.EventHandler(this.Browse_Click);
             // 
             // backup
             // 
@@ -93,15 +69,44 @@
             this.backup.UseVisualStyleBackColor = true;
             this.backup.Click += new System.EventHandler(this.backup_Click);
             // 
+            // Browse
+            // 
+            this.Browse.Location = new System.Drawing.Point(359, 37);
+            this.Browse.Name = "Browse";
+            this.Browse.Size = new System.Drawing.Size(75, 23);
+            this.Browse.TabIndex = 2;
+            this.Browse.Text = "Browse";
+            this.Browse.UseVisualStyleBackColor = true;
+            this.Browse.Click += new System.EventHandler(this.Browse_Click);
+            // 
+            // backup_location
+            // 
+            this.backup_location.Location = new System.Drawing.Point(97, 39);
+            this.backup_location.Name = "backup_location";
+            this.backup_location.ReadOnly = true;
+            this.backup_location.Size = new System.Drawing.Size(220, 20);
+            this.backup_location.TabIndex = 1;
+            this.backup_location.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Location";
+            // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.Restore);
             this.groupBox2.Controls.Add(this.Browse_restore);
             this.groupBox2.Controls.Add(this.restore_location);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Location = new System.Drawing.Point(23, 178);
+            this.groupBox2.Location = new System.Drawing.Point(17, 30);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(690, 120);
+            this.groupBox2.Size = new System.Drawing.Size(690, 123);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Data Restore";
@@ -143,18 +148,35 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Location";
             // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.groupBox2);
+            this.bunifuGradientPanel1.Controls.Add(this.groupBox1);
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.Blue;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(729, 365);
+            this.bunifuGradientPanel1.TabIndex = 2;
+            // 
             // database
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.bunifuGradientPanel1);
             this.Name = "database";
             this.Size = new System.Drawing.Size(729, 365);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.bunifuGradientPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -171,5 +193,6 @@
         private System.Windows.Forms.Button Browse_restore;
         private System.Windows.Forms.TextBox restore_location;
         private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
     }
 }

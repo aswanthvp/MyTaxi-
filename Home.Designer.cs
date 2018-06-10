@@ -35,6 +35,7 @@ namespace MyTaxi
             this.Trip = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.Remarks_text = new System.Windows.Forms.TextBox();
             this.vehicle_label = new System.Windows.Forms.Label();
             this.Pending_label = new System.Windows.Forms.Label();
             this.From_label = new System.Windows.Forms.Label();
@@ -74,9 +75,7 @@ namespace MyTaxi
             this.qty_text = new System.Windows.Forms.TextBox();
             this.company_label = new System.Windows.Forms.Label();
             this.company_text = new System.Windows.Forms.ComboBox();
-            this.Remarks_text = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Submit_button = new System.Windows.Forms.Button();
             this.Trip_details = new System.Windows.Forms.TabPage();
             this.TripDetails_panel = new System.Windows.Forms.Panel();
             this.delete_label = new System.Windows.Forms.Label();
@@ -122,6 +121,7 @@ namespace MyTaxi
             this.to_trip = new System.Windows.Forms.DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.trip_submit = new System.Windows.Forms.Button();
+            this.Submit_button = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Home_tab.SuspendLayout();
             this.Trip.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -196,7 +196,6 @@ namespace MyTaxi
             this.tableLayoutPanel1.Controls.Add(this.From_label, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.From_text, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.To_label, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.To_text, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.KM_label, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.KM_text, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.Remarks_label, 4, 3);
@@ -209,13 +208,14 @@ namespace MyTaxi
             this.tableLayoutPanel1.Controls.Add(this.dropdown_vehicle_trip, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.pending_info_text, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.driver_droplist, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.date_pick, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 5, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel6, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel7, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.company_label, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.company_text, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.To_text, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.date_pick, 5, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -227,6 +227,15 @@ namespace MyTaxi
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(852, 296);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // Remarks_text
+            // 
+            this.Remarks_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Remarks_text.Location = new System.Drawing.Point(692, 196);
+            this.Remarks_text.Name = "Remarks_text";
+            this.Remarks_text.Size = new System.Drawing.Size(82, 20);
+            this.Remarks_text.TabIndex = 17;
+            this.Remarks_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Read_KeyPress);
             // 
             // vehicle_label
             // 
@@ -685,15 +694,6 @@ namespace MyTaxi
             this.company_text.Size = new System.Drawing.Size(83, 21);
             this.company_text.TabIndex = 18;
             // 
-            // Remarks_text
-            // 
-            this.Remarks_text.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Remarks_text.Location = new System.Drawing.Point(692, 196);
-            this.Remarks_text.Name = "Remarks_text";
-            this.Remarks_text.Size = new System.Drawing.Size(82, 20);
-            this.Remarks_text.TabIndex = 17;
-            this.Remarks_text.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Read_KeyPress);
-            // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
@@ -704,20 +704,7 @@ namespace MyTaxi
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(852, 75);
             this.panel1.TabIndex = 1;
-            // 
-            // Submit_button
-            // 
-            this.Submit_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.Submit_button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Submit_button.BackgroundImage")));
-            this.Submit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Submit_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Submit_button.Location = new System.Drawing.Point(655, 6);
-            this.Submit_button.Name = "Submit_button";
-            this.Submit_button.Size = new System.Drawing.Size(137, 41);
-            this.Submit_button.TabIndex = 16;
-            this.Submit_button.Text = "Submit";
-            this.Submit_button.UseVisualStyleBackColor = false;
-            this.Submit_button.Click += new System.EventHandler(this.Submit_button_Click);
+            this.panel1.Click += new System.EventHandler(this.Submit_button_Click);
             // 
             // Trip_details
             // 
@@ -1232,6 +1219,44 @@ namespace MyTaxi
             this.trip_submit.UseVisualStyleBackColor = true;
             this.trip_submit.Click += new System.EventHandler(this.trip_submit_Click);
             // 
+            // Submit_button
+            // 
+            this.Submit_button.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.Submit_button.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Submit_button.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.Submit_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Submit_button.BorderRadius = 7;
+            this.Submit_button.ButtonText = "1   Submit";
+            this.Submit_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Submit_button.DisabledColor = System.Drawing.Color.Gray;
+            this.Submit_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.Submit_button.Iconcolor = System.Drawing.Color.Transparent;
+            this.Submit_button.Iconimage = ((System.Drawing.Image)(resources.GetObject("Submit_button.Iconimage")));
+            this.Submit_button.Iconimage_right = null;
+            this.Submit_button.Iconimage_right_Selected = null;
+            this.Submit_button.Iconimage_Selected = null;
+            this.Submit_button.IconMarginLeft = 0;
+            this.Submit_button.IconMarginRight = 0;
+            this.Submit_button.IconRightVisible = true;
+            this.Submit_button.IconRightZoom = 0D;
+            this.Submit_button.IconVisible = true;
+            this.Submit_button.IconZoom = 90D;
+            this.Submit_button.IsTab = false;
+            this.Submit_button.Location = new System.Drawing.Point(632, 17);
+            this.Submit_button.Margin = new System.Windows.Forms.Padding(2);
+            this.Submit_button.Name = "Submit_button";
+            this.Submit_button.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.Submit_button.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(158)))), ((int)(((byte)(183)))));
+            this.Submit_button.OnHoverTextColor = System.Drawing.Color.WhiteSmoke;
+            this.Submit_button.selected = false;
+            this.Submit_button.Size = new System.Drawing.Size(113, 43);
+            this.Submit_button.TabIndex = 17;
+            this.Submit_button.Text = "1   Submit";
+            this.Submit_button.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Submit_button.Textcolor = System.Drawing.Color.White;
+            this.Submit_button.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Submit_button.Click += new System.EventHandler(this.Submit_button_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1290,7 +1315,6 @@ namespace MyTaxi
         private System.Windows.Forms.Label From1_label;
         private System.Windows.Forms.Button Submit1_button;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button Submit_button;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label vehicle_label;
@@ -1370,5 +1394,6 @@ namespace MyTaxi
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.TextBox qty_text;
         private System.Windows.Forms.Button print_button;
+        private Bunifu.Framework.UI.BunifuFlatButton Submit_button;
     }
 }

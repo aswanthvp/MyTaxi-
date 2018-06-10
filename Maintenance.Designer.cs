@@ -44,7 +44,6 @@
             this.Submit_maintenance = new System.Windows.Forms.Button();
             this.dropdown_vehicle_list_maintenance = new System.Windows.Forms.ComboBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.expence_details_panel = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.Update_button = new System.Windows.Forms.Button();
@@ -72,6 +71,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.from_date = new System.Windows.Forms.DateTimePicker();
             this.Submit_maintenance_search_button = new System.Windows.Forms.Button();
+            this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.Maintenance_tab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Table_maintenance.SuspendLayout();
@@ -81,6 +81,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.bunifuGradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Maintenance_tab
@@ -188,7 +189,7 @@
             "Workshop",
             "Service",
             "GPS"});
-            this.Type_combobox.Location = new System.Drawing.Point(143, 103);
+            this.Type_combobox.Location = new System.Drawing.Point(143, 102);
             this.Type_combobox.Name = "Type_combobox";
             this.Type_combobox.Size = new System.Drawing.Size(121, 23);
             this.Type_combobox.TabIndex = 3;
@@ -251,7 +252,7 @@
             this.dropdown_vehicle_list_maintenance.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dropdown_vehicle_list_maintenance.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropdown_vehicle_list_maintenance.FormattingEnabled = true;
-            this.dropdown_vehicle_list_maintenance.Location = new System.Drawing.Point(143, 27);
+            this.dropdown_vehicle_list_maintenance.Location = new System.Drawing.Point(143, 26);
             this.dropdown_vehicle_list_maintenance.MaxDropDownItems = 100;
             this.dropdown_vehicle_list_maintenance.Name = "dropdown_vehicle_list_maintenance";
             this.dropdown_vehicle_list_maintenance.Size = new System.Drawing.Size(121, 23);
@@ -260,10 +261,7 @@
             // tabPage2
             // 
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Controls.Add(this.expence_details_panel);
-            this.tabPage2.Controls.Add(this.maintenance_search_listView);
-            this.tabPage2.Controls.Add(this.Details_label);
+            this.tabPage2.Controls.Add(this.bunifuGradientPanel1);
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Name = "tabPage2";
@@ -273,25 +271,15 @@
             this.tabPage2.Text = "Expence";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.ForeColor = System.Drawing.Color.Blue;
-            this.panel2.Location = new System.Drawing.Point(170, 1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(10, 396);
-            this.panel2.TabIndex = 5;
-            // 
             // expence_details_panel
             // 
             this.expence_details_panel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.expence_details_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.expence_details_panel.Controls.Add(this.tableLayoutPanel3);
             this.expence_details_panel.Controls.Add(this.tableLayoutPanel2);
-            this.expence_details_panel.Location = new System.Drawing.Point(560, 56);
+            this.expence_details_panel.Location = new System.Drawing.Point(350, 64);
             this.expence_details_panel.Name = "expence_details_panel";
-            this.expence_details_panel.Size = new System.Drawing.Size(278, 311);
+            this.expence_details_panel.Size = new System.Drawing.Size(278, 306);
             this.expence_details_panel.TabIndex = 4;
             this.expence_details_panel.Visible = false;
             // 
@@ -493,10 +481,10 @@
             // 
             this.maintenance_search_listView.AllowColumnReorder = true;
             this.maintenance_search_listView.FullRowSelect = true;
-            this.maintenance_search_listView.Location = new System.Drawing.Point(186, 56);
+            this.maintenance_search_listView.Location = new System.Drawing.Point(27, 67);
             this.maintenance_search_listView.MultiSelect = false;
             this.maintenance_search_listView.Name = "maintenance_search_listView";
-            this.maintenance_search_listView.Size = new System.Drawing.Size(355, 313);
+            this.maintenance_search_listView.Size = new System.Drawing.Size(298, 288);
             this.maintenance_search_listView.TabIndex = 3;
             this.maintenance_search_listView.UseCompatibleStateImageBehavior = false;
             this.maintenance_search_listView.SelectedIndexChanged += new System.EventHandler(this.maintenance_search_listView_SelectedIndexChanged);
@@ -504,8 +492,9 @@
             // Details_label
             // 
             this.Details_label.AutoSize = true;
+            this.Details_label.BackColor = System.Drawing.Color.Transparent;
             this.Details_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Details_label.Location = new System.Drawing.Point(325, 15);
+            this.Details_label.Location = new System.Drawing.Point(179, 17);
             this.Details_label.Name = "Details_label";
             this.Details_label.Size = new System.Drawing.Size(65, 20);
             this.Details_label.TabIndex = 2;
@@ -609,6 +598,24 @@
             this.Submit_maintenance_search_button.UseVisualStyleBackColor = true;
             this.Submit_maintenance_search_button.Click += new System.EventHandler(this.Submit_maintenance_search_button_Click);
             // 
+            // bunifuGradientPanel1
+            // 
+            this.bunifuGradientPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuGradientPanel1.BackgroundImage")));
+            this.bunifuGradientPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuGradientPanel1.Controls.Add(this.Details_label);
+            this.bunifuGradientPanel1.Controls.Add(this.maintenance_search_listView);
+            this.bunifuGradientPanel1.Controls.Add(this.expence_details_panel);
+            this.bunifuGradientPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.bunifuGradientPanel1.GradientBottomLeft = System.Drawing.Color.DodgerBlue;
+            this.bunifuGradientPanel1.GradientBottomRight = System.Drawing.Color.MediumSlateBlue;
+            this.bunifuGradientPanel1.GradientTopLeft = System.Drawing.Color.Navy;
+            this.bunifuGradientPanel1.GradientTopRight = System.Drawing.Color.DimGray;
+            this.bunifuGradientPanel1.Location = new System.Drawing.Point(169, 3);
+            this.bunifuGradientPanel1.Name = "bunifuGradientPanel1";
+            this.bunifuGradientPanel1.Quality = 10;
+            this.bunifuGradientPanel1.Size = new System.Drawing.Size(686, 386);
+            this.bunifuGradientPanel1.TabIndex = 6;
+            // 
             // Maintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,7 +630,6 @@
             this.Table_maintenance.ResumeLayout(false);
             this.Table_maintenance.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.expence_details_panel.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -632,6 +638,8 @@
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.bunifuGradientPanel1.ResumeLayout(false);
+            this.bunifuGradientPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -679,7 +687,7 @@
         private System.Windows.Forms.TextBox vehicle_text_expence;
         private System.Windows.Forms.TextBox km_text_expence;
         private System.Windows.Forms.DateTimePicker date_expence;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
+        private Bunifu.Framework.UI.BunifuGradientPanel bunifuGradientPanel1;
     }
 }

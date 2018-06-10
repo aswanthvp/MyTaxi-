@@ -59,12 +59,21 @@ namespace MyTaxi
 
         private void Home_Click_1(object sender, EventArgs e)
         {
-            vehicle_new.Visible = false;
+            /*vehicle_new.Visible = false;
             home_new.Visible = true;          
             maintenance1.Visible = false;
             driver1.Visible = false;
             company1.Visible = false;
-            database1.Visible = false;
+            database1.Visible = false;*/
+
+            bunifuTransition1.HideSync(maintenance1);
+            bunifuTransition1.HideSync(driver1);
+            bunifuTransition1.HideSync(company1);
+            bunifuTransition1.HideSync(database1);
+            bunifuTransition1.HideSync(vehicle_new);
+            bunifuTransition1.ShowSync(home_new);
+
+
             home_new.Load_vehicle();
             home_new.Load_company();
             home_new.Load_driver();
@@ -72,54 +81,98 @@ namespace MyTaxi
 
         private void Maintenence_Click(object sender, EventArgs e)
         {
-            vehicle_new.Visible = false;
+            /*vehicle_new.Visible = false;
             home_new.Visible = false;
             maintenance1.Visible = true;          
             driver1.Visible = false;
             company1.Visible = false;
-            database1.Visible = false;
+            database1.Visible = false;*/
+
+
+            bunifuTransition1.HideSync(home_new);
+            bunifuTransition1.HideSync(driver1);
+            bunifuTransition1.HideSync(company1);
+            bunifuTransition1.HideSync(database1);
+            bunifuTransition1.HideSync(vehicle_new);
+            bunifuTransition1.ShowSync(maintenance1);
+
+
             maintenance1.Load_vehicle();
 
         }
 
         private void Driver_Click(object sender, EventArgs e)
         {
-            vehicle_new.Visible = false;
+           /* vehicle_new.Visible = false;
             home_new.Visible = false;
             maintenance1.Visible = false;
             driver1.Visible = true;
             company1.Visible = false;
-            database1.Visible = false;
+            database1.Visible = false;*/
+
+
+            bunifuTransition1.HideSync(home_new);
+            bunifuTransition1.HideSync(maintenance1);
+            bunifuTransition1.HideSync(company1);
+            bunifuTransition1.HideSync(database1);
+            bunifuTransition1.HideSync(vehicle_new);
+            bunifuTransition1.ShowSync(driver1);
         }
 
         private void Company_Click(object sender, EventArgs e)
         {
-            vehicle_new.Visible = false;
+           /* vehicle_new.Visible = false;
             home_new.Visible = false;
             maintenance1.Visible = false;
             driver1.Visible = false;
             company1.Visible = true;
-            database1.Visible = false;
+            database1.Visible = false;*/
+
+
+            bunifuTransition1.HideSync(home_new);
+            bunifuTransition1.HideSync(driver1);
+            bunifuTransition1.HideSync(maintenance1);
+            bunifuTransition1.HideSync(database1);
+            bunifuTransition1.HideSync(vehicle_new);
+            bunifuTransition1.ShowSync(company1);
         }
 
         private void Vehicle_button_Click(object sender, EventArgs e)
         {
-            vehicle_new.Visible = true;
+           /* vehicle_new.Visible = true;
             company1.Visible = false;
             home_new.Visible = false;
             maintenance1.Visible = false;
             driver1.Visible = false;
-            database1.Visible = false;
+            database1.Visible = false;*/
+
+
+
+            bunifuTransition1.HideSync(home_new);
+            bunifuTransition1.HideSync(driver1);
+            bunifuTransition1.HideSync(company1);
+            bunifuTransition1.HideSync(database1);
+            bunifuTransition1.HideSync(maintenance1);
+            bunifuTransition1.ShowSync(vehicle_new);
         }
 
         private void backup_button_Click(object sender, EventArgs e)
         {
-            vehicle_new.Visible = false;
+          /*  vehicle_new.Visible = false;
             company1.Visible = false;
             home_new.Visible = false;
             maintenance1.Visible = false;
             database1.Visible = true;
-            driver1.Visible = false;
+            driver1.Visible = false;*/
+
+
+
+            bunifuTransition1.HideSync(home_new);
+            bunifuTransition1.HideSync(driver1);
+            bunifuTransition1.HideSync(company1);
+            bunifuTransition1.HideSync(maintenance1);
+            bunifuTransition1.HideSync(vehicle_new);
+            bunifuTransition1.ShowSync(database1);
         }
 
         private void Exit_Click(object sender, EventArgs e)
