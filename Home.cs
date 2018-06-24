@@ -458,13 +458,14 @@ namespace MyTaxi
                         int total_company_temp = Convert.ToInt32(reader_new["total_company"]);
                         int driver_money = Convert.ToInt32(total_company_temp*.15);
                         int remarks_temp = Convert.ToInt32(reader_new["remark"]);
-                        int diesel_temp= Convert.ToInt32(reader_new["diesel"]);                   
+                        int diesel_temp= Convert.ToInt32(reader_new["diesel"]);
+                        int diesel_us = Convert.ToInt32(reader_new["diesel_us"]);
 
-                        int total_profit = total_company_temp - driver_money - diesel_temp;
+                        int total_profit = total_company_temp - driver_money - diesel_temp-diesel_us;
 
                         company_money.Text= Convert.ToString(total_company_temp+remarks_temp);
                         Driver_money.Text = Convert.ToString(driver_money);
-                        petrol_money.Text = Convert.ToString(diesel_temp);
+                        petrol_money.Text = Convert.ToString(diesel_temp+diesel_us);
                         Fine_money.Text = Convert.ToString(remarks_temp);
                         Profit_money.Text = Convert.ToString(total_profit);
     
